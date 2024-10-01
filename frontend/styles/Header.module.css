@@ -1,0 +1,137 @@
+.Container {
+  display: flex;
+  padding: 0 20px;
+  margin: 0px;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100vw;
+  font-family: 'Arial';
+  background-color: rgb(214, 208, 187);
+  color: black;
+  display: flex;
+}
+
+.btnInscription {
+  background-color: #D9D1B5;
+  /* Beige pastel pour différencier */
+  color: #2B2B2B;
+  /* Texte gris foncé */
+  padding: 15px 30px;
+  /* Taille du bouton */
+  border: none;
+  /* Pas de bordure */
+  border-radius: 20px;
+  /* Coins arrondis */
+  font-size: 18px;
+  /* Taille du texte */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  /* Ombre douce pour effet 3D */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Animation fluide */
+}
+
+.btnInscription:hover {
+  transform: translateY(-2px);
+  /* Soulèvement léger au survol */
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+  /* Augmentation de l'ombre */
+}
+
+.btnConnexion {
+  background-color: #B8C2AE;
+  /* Vert pastel similaire */
+  color: #2B2B2B;
+  /* Texte gris foncé */
+  padding: 15px 30px;
+  /* Taille du bouton */
+  border: none;
+  /* Pas de bordure */
+  border-radius: 20px;
+  /* Coins arrondis */
+  font-size: 18px;
+  /* Taille du texte */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  /* Ombre douce pour effet 3D */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Animation fluide */
+  margin-top: 30px;
+}
+
+.btnConnexion:hover {
+  transform: translateY(-2px);
+  /* Soulèvement léger au survol */
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+  /* Augmentation de l'ombre */
+}
+
+.logo {
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  align-items: left;
+  padding: 15px 30px;
+  height: 20vh;
+  width: 20vw;
+  margin-top: 60px;
+}
+
+.topTitle {
+  background-color: #F4F1EB;
+  /* Couleur douce de fond */
+  height: 200px;
+  /* Hauteur du header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centrer verticalement */
+  align-items: center;
+  /* Centrer horizontalement */
+  margin-top: 50px;
+  /* Ajouter un peu d'espace en haut */
+}
+
+.title {
+  font-size: 48px;
+  /* Taille du logo */
+  color: #2B2B2B;
+  /* Couleur du texte */
+  font-family: 'Arial', sans-serif;
+  /* Police simple et moderne */
+  text-align: center;
+  /* Centrer le texte */
+  letter-spacing: 3px;
+  /* Espacement entre les lettres */
+  font-weight: bold;
+  /* Texte en gras */
+  margin-top: 50px;
+}
+
+.title span {
+  color: #A09C7E;
+  /* Couleur plus claire pour "Chic" */
+  font-weight: normal;
+  /* Texte moins épais pour le contraste */
+}
+
+.subtitle {
+  font-size: 16px;
+  /* Taille du sous-titre */
+  color: #2B2B2B;
+  /* Couleur du sous-titre */
+  text-transform: uppercase;
+  /* Texte en majuscules */
+  letter-spacing: 2px;
+  /* Espacement entre les lettres */
+  margin-top: 10px;
+  /* Un peu d'espace sous le titre principal */
+}
+
+.title:hover {
+  transform: translateY(-3px);
+  /* Léger soulèvement au survol */
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+  /* Accentuation de l'ombre */
+}

@@ -1,0 +1,86 @@
+.Container {
+  display: flex;
+  justify-content: space-between;
+  /* Sépare les éléments à gauche et à droite */
+  align-items: center;
+  /* Aligne tous les éléments verticalement au centre */
+  padding: 0;
+  margin: 0;
+  height: 10vh;
+  width: 100vw;
+  font-family: 'Arial';
+  background-color: rgb(214, 208, 187) !important;
+  color: black;
+}
+
+.contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* Aligne les boutons sur la même ligne verticalement */
+  gap: 20px;
+  /* Espace entre les boutons */
+  flex-grow: 1;
+  /* Permet à cette section de prendre tout l'espace restant */
+  padding: 0;
+  background-color: rgb(214, 208, 187);
+  border: solid #B300F2 1px;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* Assure que les icônes sont alignées verticalement */
+  gap: 20px;
+  /* Espace entre les icônes */
+  padding: 0 30px;
+  background-color: rgb(214, 208, 187);
+  border: solid #f20000 1px;
+}
+
+.btnContact,
+.btnAvis,
+.logoInstagram,
+.logoLinkedIn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logoInstagram:hover,
+.logoLinkedIn:hover {
+  text-decoration: underline;
+}
+
+.logoInstagram {
+  width: 50px;
+  height: 50px;
+  border-radius: 37px;
+  box-shadow: 0px 15px 40px 1px rgba(0, 0, 0, 0.5);
+}
+
+.logoLinkedIn {
+  width: 50px;
+  height: 50px;
+  border-radius: 37px;
+  box-shadow: 0px 15px 40px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btnContact,
+.btnAvis {
+  background-color: #B8C2AE;
+  color: #2B2B2B;
+  padding: 15px 30px;
+  /* Taille du bouton */
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  /* Ombre douce pour effet 3D */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Animation fluide */
+  margin-top: 30px;
+}

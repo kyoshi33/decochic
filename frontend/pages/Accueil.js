@@ -1,27 +1,42 @@
 
 import styles from "../styles/Accueil.module.css"
 import Head from 'next/head';
-import Header from "../components/header";
+import Header from "../components/Header";
+import Product from "../components/product";
+import Footer from "../components/Footer";
+import { useState } from "react";
+
 
 
 
 function Accueil() {
-  let display =
-    <div className={styles.container}>
-      <div className={styles.choiceContainer}>
-        <div className={styles.advice}>Bienvenue sur CONFOCHIC
-        </div>
-      </div>
-    </div >
+
+  const [placeHolder, setPlaceHolder] = useState('Recherche ...');
+
+
 
 
   return (
     <>
       <Head>
-        <title>Decochic</title>
+        <title>ConfoChic</title>
       </Head>
       <Header></Header>
-      {display}
+      <div>
+        <div className={styles.containerSearch}>
+          <input type='string' placeholder={placeHolder} className={styles.inputSearch} />
+          <button className={styles.btnInscription}>Canape</button>
+          <button className={styles.btnConnexion}>Fauteuil</button>
+          <button className={styles.btnInscription}>Table basse</button>
+          <button className={styles.btnConnexion}>Produit mystere</button>
+
+        </div>
+        <div className={styles.containerProduct}>
+          <Product></Product>
+        </div>
+      </div >
+
+      < Footer ></Footer >
 
 
     </>

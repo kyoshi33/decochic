@@ -1,0 +1,138 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D1B5;
+  height: fit-content;
+  width: fit-content;
+  margin-right: -50%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 20px;
+  border: solid #B8C2AE 3px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+  height: 80vh;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px
+}
+
+.modalTitleContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 10%;
+  padding: 10px;
+  background-color: #B8C2AE;
+  border: solid #D9D1B5 1px;
+  border-radius: 10px;
+}
+
+.modalTitle {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: black;
+  margin: 0;
+  margin-left: 20px;
+  font-style: normal;
+  font-weight: 300;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  /* Espacement entre les champs */
+  border: 1px solid #B8C2AE;
+  border-radius: 5px;
+  background-color: #D9D1B5;
+  font-size: 16px;
+}
+
+.texteArea {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  /* Plus d'espace au-dessus du champ de texte */
+  border: 1px solid #B8C2AE;
+  border-radius: 5px;
+  background-color: #D9D1B5;
+  font-size: 16px;
+  height: 150px;
+  /* Taille ajustée pour le champ de message */
+}
+
+.promptContainer {
+  width: 90%;
+  min-height: 40%;
+  background-color: #B8C2AE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #D9D1B5 1px;
+  border-radius: 10px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  color: black;
+  font-size: 130%;
+}
+
+
+.btn {
+  cursor: pointer;
+  background-color: #B8C2AE;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  height: 7vh;
+  width: 10vw;
+  border: solid #D9D1B5 0.5px;
+  border-radius: 5px;
+  margin: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition-duration: 500ms;
+
+}
+
+.btn:hover {
+  background-color: #D9D1B5;
+}
+
+
+.text {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  color: black;
+  width: 90%;
+  padding-left: -5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.modalBtnContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}

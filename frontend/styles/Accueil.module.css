@@ -2,20 +2,103 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   height: 100vh;
+  width: 100vw;
+  font-family: 'Arial';
+  background-color: rgb(250, 248, 240);
+  color: black;
+}
+
+/* background-color: rgb(236, 230, 207); */
+.button {
+  background-color: '#f44336';
+  color: 'white';
+  padding: '10px 20px';
+  border-radius: '5px';
+  border: 'none';
+  cursor: 'pointer';
+  font-size: '16px';
+}
+
+.containerSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 40vh;
   width: 100vw;
   font-family: 'Arial';
   background-color: rgb(214, 208, 187);
   color: black;
+  border: solid #B300F2 1px;
+  gap: 20px;
 }
 
-.button {
-  backgroundColor: '#f44336';
-  color: 'white';
-  padding: '10px 20px';
-  borderRadius: '5px';
-  border: 'none';
-  cursor: 'pointer';
-  fontSize: '16px';
+.inputSearch {
+  height: 5vh;
+  width: 30vw;
+}
+
+.btnInscription {
+  background-color: #D9D1B5;
+  color: #2B2B2B;
+  /* Texte gris foncé */
+  padding: 10px 20px;
+  /* Taille du bouton */
+  border: none;
+  /* Pas de bordure */
+  border-radius: 20px;
+  /* Coins arrondis */
+  font-size: 18px;
+  /* Taille du texte */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  /* Ombre douce pour effet 3D */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Animation fluide */
+}
+
+.btnInscription:hover {
+  transform: translateY(-2px);
+  /* Soulèvement léger au survol */
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+  /* Augmentation de l'ombre */
+}
+
+.btnConnexion {
+  background-color: #B8C2AE;
+  color: #2B2B2B;
+  padding: 10px 20px;
+  /* Taille du bouton */
+  border: none;
+  /* Pas de bordure */
+  border-radius: 20px;
+  /* Coins arrondis */
+  font-size: 18px;
+  /* Taille du texte */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  /* Ombre douce pour effet 3D */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Animation fluide */
+}
+
+.btnConnexion:hover {
+  transform: translateY(-2px);
+  /* Soulèvement léger au survol */
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+  /* Augmentation de l'ombre */
+}
+
+.containerProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+  width: 100vw;
+  font-family: 'Arial';
+  background-color: rgb(214, 208, 187);
+  color: black;
+  border: solid #B300F2 1px;
 }

@@ -4,12 +4,13 @@
   margin: 0px;
   align-items: center;
   justify-content: space-between;
-  height: 10vh;
+  height: 25vh;
   width: 100vw;
   font-family: 'Arial';
   background-color: rgb(214, 208, 187);
   color: black;
   display: flex;
+  border: solid #f80c20 1px;
 }
 
 .btnInscription {
@@ -30,6 +31,7 @@
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   /* Animation fluide */
+  gap: 20px;
 }
 
 .btnInscription:hover {
@@ -75,13 +77,14 @@
   padding: 15px 30px;
   height: 20vh;
   width: 20vw;
-  margin-top: 60px;
+  margin-top: 90px;
+  cursor: pointer;
 }
 
 .topTitle {
   background-color: #F4F1EB;
   /* Couleur douce de fond */
-  height: 200px;
+  height: 150px;
   /* Hauteur du header */
   display: flex;
   flex-direction: column;
@@ -99,7 +102,6 @@
   color: #2B2B2B;
   /* Couleur du texte */
   font-family: 'Arial', sans-serif;
-  /* Police simple et moderne */
   text-align: center;
   /* Centrer le texte */
   letter-spacing: 3px;
@@ -134,4 +136,17 @@
   /* Léger soulèvement au survol */
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
   /* Accentuation de l'ombre */
+}
+
+.profil {
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  align-items: left;
+  padding: 15px 30px;
+  height: 25vh;
+  width: 15vw;
+  margin-top: 90px;
+  cursor: pointer;
+  color: #646b5c;
 }

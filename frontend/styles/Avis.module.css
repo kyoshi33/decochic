@@ -62,7 +62,6 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  /* Espacement entre les champs */
   border: 1px solid #B8C2AE;
   border-radius: 5px;
   background-color: #D9D1B5;
@@ -74,13 +73,12 @@
   height: 100%;
   padding: 10px;
   margin-top: 20px;
-  /* Plus d'espace au-dessus du champ de texte */
   border: 1px solid #B8C2AE;
   border-radius: 5px;
   background-color: #D9D1B5;
   font-size: 16px;
   height: 150px;
-  /* Taille ajustée pour le champ de message */
+
 }
 
 .promptContainer {

@@ -15,7 +15,6 @@
   height: 600px;
   overflow-y: scroll;
   margin: 100px auto;
-  /* Centrer horizontalement et ajouter un espace vertical */
   padding: 40px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -82,29 +81,19 @@
 
 .btnRetour {
   background-color: #B8C2AE;
-  /* Vert pastel similaire */
   color: #2B2B2B;
-  /* Texte gris foncé */
   padding: 15px 30px;
-  /* Taille du bouton */
   border: none;
-  /* Pas de bordure */
   border-radius: 20px;
-  /* Coins arrondis */
   font-size: 18px;
-  /* Taille du texte */
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-  /* Ombre douce pour effet 3D */
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  /* Animation fluide */
   margin-top: 30px;
   gap: 80px;
 }
 
 .btnRetour:hover {
   transform: translateY(-2px);
-  /* Soulèvement léger au survol */
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
-  /* Augmentation de l'ombre */
 }

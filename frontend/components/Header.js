@@ -1,8 +1,6 @@
 import styles from '../styles/Header.module.css';
 import Link from 'next/link';
-import { FaUserCircle } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
-import { PiHandWavingDuotone } from "react-icons/pi";
 import { ImExit } from "react-icons/im";
 import { useDispatch } from "react-redux";
 import { logout } from '../reducers/user';
@@ -25,6 +23,9 @@ function Header() {
     router.push({ pathname: '/Accueil' })
   }
 
+  const lettreEnCapital = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  };
 
 
   let topMenu =
@@ -41,11 +42,12 @@ function Header() {
   if (user.token) {
     topMenu =
       <div className={styles.container}>
-        <h3>Bonjour {user.firstName} !</h3><PiHandWavingDuotone />
-        <Link href='/Accueil' >
-          <ImExit className={styles.btnDeconnexion} onClick={() => handleLogout()} />
-        </Link>
-
+        <div className={styles.profilConnecter}>
+          <h3 className={styles.text}>Bonjour {lettreEnCapital(user.firstName)} !</h3> <span className={styles.icon}>👋</span>
+          <Link href='/Accueil' >
+            <ImExit className={styles.exitIcon} onClick={() => handleLogout()} />
+          </Link>
+        </div>
       </div>
 
   }

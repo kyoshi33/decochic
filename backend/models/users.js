@@ -8,7 +8,7 @@ const usersSchema = mongoose.Schema({
   token: String,
   adresses: [{
     adresse: String,
-    codepostal: Number,
+    codePostal: Number,
     ville: String,
   }],
   commandes: [{

@@ -5,8 +5,9 @@ import { validationRules } from '../modules/validationRules';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-
-
+import { useRouter } from 'next/router'
+import { useDispatch } from "react-redux";
+import { login } from "../reducers/user";
 
 
 function SignUp() {
@@ -16,15 +17,41 @@ function SignUp() {
   const motDePasse = watch("motDePasse");
   const [password, setPassword] = useState('');
   const [type, setType] = useState('password');
+  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [adresse, setAdresse] = useState('');
+  const [codePostal, setCodePostal] = useState('');
+  const [ville, setVille] = useState('');
+  const [errorLogin, setErrorLogin] = useState(true);
+
+  const dispatch = useDispatch();
+  const router = useRouter()
 
   const onSubmit = data => {
     console.log(data);
   };
 
+
   const handleToggle = () => {
     setType(type === 'password' ? 'text' : 'password');
   };
 
+  const validationInscription = async () => {
+    const fetchLogin = await fetch('http://localhost:3000/users/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, firstName, email, password, adresse, codePostal, ville }),
+    })
+    const res = await fetchLogin.json()
+    if (res.result) {
+      dispatch(login({ token: res.token, name: res.name, firstName: res.firstName, email: res.email }));
+      router.push({ pathname: '/Accueil' })
+      console.log('validation ok')
+    } else {
+      setErrorLogin(true)
+    }
+  };
 
 
 
@@ -46,20 +73,23 @@ function SignUp() {
 
           <div className={styles.formGroup}>
             <label className={styles.label}>Prenom</label>
-            <input className={styles.holder} placeholder='Votre prenom'{...register("firstName", validationRules.firstName)} />
+            <input className={styles.holder} placeholder='Votre prenom'{...register("firstName", validationRules.firstName)}
+              onChange={(e) => setFirstName(e.target.value)} value={firstName} />
             {errors.firstName && <p className={styles.error}>{errors.firstName.message}</p>}
           </div>
 
           <div className={styles.formGroup}>
             <label className={styles.label}>Nom</label>
-            <input className={styles.holder} placeholder='Votre nom' {...register("name", validationRules.name)} />
+            <input className={styles.holder} placeholder='Votre nom' {...register("name", validationRules.name)}
+              onChange={(e) => setName(e.target.value)} value={name} />
             {errors.lastName && <p className={styles.error}>{errors.lastName.message}</p>}
           </div>
 
           <div className={styles.formGroup}>
             <label className={styles.label}>E-mail</label>
             <input className={styles.holder} placeholder='Votre e-mail' {...register("email", validationRules.email)}
-              autoComplete="votre e-mail" />
+              autoComplete="votre e-mail"
+              onChange={(e) => setEmail(e.target.value)} value={email} />
             {errors.email && <p className={styles.error}>{errors.email.message}</p>}
           </div>
 
@@ -101,23 +131,26 @@ function SignUp() {
 
           <div className={styles.formGroup}>
             <label className={styles.label}>Votre adresse</label>
-            <input className={styles.holder} placeholder='Votre adresse postal' {...register("adresse", validationRules.adresse)} />
+            <input className={styles.holder} placeholder='Votre adresse postal' {...register("adresse", validationRules.adresse)}
+              onChange={(e) => setAdresse(e.target.value)} value={adresse} />
             {errors.adresse && <p className={styles.error}>{errors.adresse.message}</p>}
           </div>
 
           <div className={styles.formGroup}>
             <label className={styles.label}>Code postal</label>
-            <input className={styles.holder} placeholder='Code postal' {...register("codePostal", validationRules.codePostal)} />
+            <input className={styles.holder} placeholder='Code postal' {...register("codePostal", validationRules.codePostal)}
+              onChange={(e) => setCodePostal(e.target.value)} value={codePostal} />
             {errors.codePostal && <p className={styles.error}>{errors.codePostal.message}</p>}
           </div>
 
           <div className={styles.formGroup}>
             <label className={styles.label}>Ville</label>
-            <input className={styles.holder} placeholder='Ville' {...register("ville", validationRules.ville)} />
+            <input className={styles.holder} placeholder='Ville' {...register("ville", validationRules.ville)}
+              onChange={(e) => setVille(e.target.value)} value={ville} />
             {errors.ville && <p className="error">{errors.ville.message}</p>}
           </div>
           <div className={styles.btn}>
-            <button className={styles.btnValidation} type="submit">Valider mon Inscription</button>
+            <button className={styles.btnValidation} type="submit" onClick={() => validationInscription()}>Valider mon Inscription</button>
             <Link href='/Accueil'>
               <button className={styles.btnRetour}>Retour</button>
             </Link>

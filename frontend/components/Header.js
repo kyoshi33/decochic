@@ -2,6 +2,11 @@ import styles from '../styles/Header.module.css';
 import Link from 'next/link';
 import { FaUserCircle } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
+import { PiHandWavingDuotone } from "react-icons/pi";
+import { ImExit } from "react-icons/im";
+import { useDispatch } from "react-redux";
+import { logout } from '../reducers/user';
+import { useRouter } from 'next/router'
 
 
 
@@ -9,7 +14,18 @@ import { useSelector } from 'react-redux';
 //Composant header présent dans plusieurs des pages du site
 function Header() {
 
+
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
+  const router = useRouter();
+
+
+  const handleLogout = () => {
+    dispatch(logout());
+    router.push({ pathname: '/Accueil' })
+  }
+
+
 
   let topMenu =
     <div className={styles.container}>
@@ -25,7 +41,11 @@ function Header() {
   if (user.token) {
     topMenu =
       <div className={styles.container}>
-        <FaUserCircle className={styles.profil} />
+        <h3>Bonjour {user.firstName} !</h3><PiHandWavingDuotone />
+        <Link href='/Accueil' >
+          <ImExit className={styles.btnDeconnexion} onClick={() => handleLogout()} />
+        </Link>
+
       </div>
 
   }

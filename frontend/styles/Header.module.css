@@ -150,3 +150,17 @@
   cursor: pointer;
   color: #646b5c;
 }
+
+.btnDeconnexion {
+  color: #da0c0c;
+  border-radius: 20px;
+  /* Coins arrondis */
+  font-size: 18px;
+  /* Taille du texte */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  /* Ombre douce pour effet 3D */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Animation fluide */
+  margin-top: 30px;
+}

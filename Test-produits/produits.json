@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Canapé Moderne 3 Places",
+    "categorie": "canape",
+    "price": 750,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728677149/91C4vb4PN8L_rweges.jpg",
+    "description": "Canapé moderne de 3 places avec accoudoirs larges.",
+    "dimension": "200x90x80 cm",
+    "couleur": "Gris",
+    "matiere": "Tissu",
+    "motscles": [
+      "moderne",
+      "2 places",
+      "confort"
+    ]
+  },
+  {
+    "name": "Canapé d'Angle Luxe",
+    "categorie": "canape",
+    "price": 1200,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728677148/0013_CANE_LINE_INDOOR_2022_077_11935_ljr6ol.jpg",
+    "description": "Canapé d'angle en cuir avec coussins moelleux.",
+    "dimension": "300x200x90 cm",
+    "couleur": "Noir",
+    "matiere": "Cuir",
+    "motscles": [
+      "d'angle",
+      "luxe",
+      "cuir"
+    ]
+  },
+  {
+    "name": "Canapé Scandinave",
+    "categorie": "canape",
+    "price": 650,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728677148/Safford-Sofa-Grey-Front-Featured-_itijq2.jpg",
+    "description": "Canapé scandinave avec pieds en bois et coussins détachables.",
+    "dimension": "180x85x75 cm",
+    "couleur": "Bleu Clair",
+    "matiere": "Velours",
+    "motscles": [
+      "scandinave",
+      "pieds bois",
+      "design"
+    ]
+  },
+  {
+    "name": "Fauteuil Pivotant Design",
+    "categorie": "fauteuil",
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679558/cfa0018_eg_vy6enh.jpg",
+    "price": 550,
+    "description": "Fauteuil pivotant avec base en métal chromé et assise ergonomique.",
+    "dimension": "70x85x95 cm",
+    "couleur": "Rouge",
+    "matiere": "Velours",
+    "motscles": [
+      "pivotant",
+      "design",
+      "chromé"
+    ]
+  },
+  {
+    "name": "Fauteuil Chesterfield",
+    "categorie": "fauteuil",
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679556/fauteuil-boti-en-mindi-massif-et-tissu-ecru-6197_vhfn61.jpg",
+    "price": 800,
+    "description": "Fauteuil Chesterfield en cuir, capitonné avec accoudoirs enroulés.",
+    "dimension": "90x90x85 cm",
+    "couleur": "Noir",
+    "matiere": "Cuir",
+    "motscles": [
+      "chesterfield",
+      "cuir",
+      "capitonné"
+    ]
+  },
+  {
+    "name": "Fauteuil Papillon",
+    "categorie": "fauteuil",
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679550/010727_mqolzd.jpg",
+    "price": 250,
+    "description": "Fauteuil papillon pliable avec assise en toile robuste.",
+    "dimension": "70x90x95 cm",
+    "couleur": "Crème",
+    "matiere": "Toile de Coton",
+    "motscles": [
+      "pliable",
+      "léger",
+      "robuste"
+    ]
+  },
+  {
+    "name": "Table Basse Industrielle",
+    "categorie": "table_basse",
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679635/table-basse-ronde-en-acacia-massif-naturel-julia_jqtupf.jpg",
+    "price": 300,
+    "description": "Table basse au style industriel avec structure en acier et plateau en bois massif.",
+    "dimension": "120x70x45 cm",
+    "couleur": "Bois Foncé et Noir",
+    "matiere": "Acier et Bois Massif",
+    "motscles": [
+      "industriel",
+      "acier",
+      "bois massif"
+    ]
+  },
+  {
+    "name": "Table Basse Ronde en Marbre",
+    "categorie": "table_basse",
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679633/cbd3292322ae18feecf4bc513d7afe68_pkocnx.jpg",
+    "price": 450,
+    "description": "Table basse ronde avec plateau en marbre et base en métal doré.",
+    "dimension": "90x90x40 cm",
+    "couleur": "Blanc et Doré",
+    "matiere": "Marbre et Métal",
+    "motscles": [
+      "marbre",
+      "ronde",
+      "doré"
+    ]
+  },
+  {
+    "name": "Table Basse Relevable",
+    "categorie": "table_basse",
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679631/Solid-Mango-Wood-Coffee-Table_cb1bxb.jpg",
+    "price": 220,
+    "description": "Table basse relevable avec espace de rangement intégré sous le plateau.",
+    "dimension": "110x60x45 cm",
+    "couleur": "Blanc",
+    "matiere": "MDF",
+    "motscles": [
+      "relevable",
+      "rangement",
+      "pratique"
+    ]
+  }
+]

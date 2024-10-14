@@ -8,14 +8,19 @@ const bcrypt = require('bcrypt');
 const { checkBody } = require('../modules/checkbody')
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
+router.get('/', async (req, res) => {
+  try {
+    const users = await User.find(); // Requête pour récupérer les produits
+    res.json(users); // Renvoi du résultat en format JSON
+  } catch (err) {
+    res.status(500).send("Erreur lors de la récupération des produits");
+  }
 });
 
 // Créer un nouvel utilisateur.
 router.post('/signup', (req, res) => {
   //Vérifier que les champs sont tous fournis
-  if (!checkBody(req.body, ['firstName', 'name', 'password', 'email', 'adresse', 'codePostal', 'ville'])) {
+  if (!checkBody(req.body, ['civilite', 'firstName', 'name', 'password', 'email', 'adresse', 'codePostal', 'ville'])) {
     res.json({ result: false, error: 'Champs manquants ou vides' });
     return;
   }
@@ -25,6 +30,7 @@ router.post('/signup', (req, res) => {
       const hash = bcrypt.hashSync(req.body.password, 10);
       // Créer le nouvel utilisateur
       const newUser = new User({
+        civilite: req.body.civilite,
         firstName: req.body.firstName,
         name: req.body.name,
         email: req.body.email,
@@ -35,7 +41,7 @@ router.post('/signup', (req, res) => {
         ville: req.body.ville,
       });
       newUser.save().then(newDoc => {
-        res.json({ result: true, token: newDoc.token, firstname: newDoc.firstname, name: req.body.name, email: req.body.email });
+        res.json({ result: true, token: newDoc.token, civilite: req.body.civilite, firstName: req.body.firstName, name: req.body.name, email: req.body.email });
       });
     } else {
       // L'utilisateur existe déjà en base de données

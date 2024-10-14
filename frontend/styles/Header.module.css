@@ -9,7 +9,7 @@
   font-family: 'Arial';
   background-color: rgb(214, 208, 187);
   color: black;
-  display: flex;
+
 }
 
 .btnInscription {
@@ -48,6 +48,16 @@
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
 }
 
+.histoire {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Square';
+  color: black;
+  cursor: pointer;
+}
+
+
 .logo {
   padding: 0;
   margin: 20px;
@@ -73,7 +83,7 @@
 .title {
   font-size: 48px;
   color: #2B2B2B;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Square', sans-serif;
   text-align: center;
   letter-spacing: 3px;
   font-weight: bold;

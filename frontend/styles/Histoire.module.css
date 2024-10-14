@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Square';
+  background-color: rgb(250, 248, 240);
+  color: black;
+}

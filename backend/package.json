@@ -6,6 +6,8 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/url-gen": "^1.21.0",
     "bcrypt": "^5.1.1",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",

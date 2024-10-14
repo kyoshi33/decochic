@@ -10,7 +10,7 @@ const productsSchema = mongoose.Schema({
   couleur: String,
   matiere: String,
   rating: Number,
-  motcles: String,
+  motscles: [String],
   avis: [{
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'users', required: false },
     rating: Number,

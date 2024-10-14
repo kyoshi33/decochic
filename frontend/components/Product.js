@@ -1,6 +1,4 @@
 import styles from '../styles/Product.module.css';
-import { FaCreditCard } from 'react-icons/fa';
-import { FaShoppingCart } from 'react-icons/fa';
 import { TbShoppingCartPlus } from "react-icons/tb";
 import { FaHeart } from "react-icons/fa";
 
@@ -8,16 +6,21 @@ import { FaHeart } from "react-icons/fa";
 
 
 
-function Product() {
+
+function Product(props) {
+
 
   return (
     <div className={styles.productCard}>
       <div className={styles.productImage}>
-        <img src="friheten.jpg" />
+        <img src={props.image} alt={props.name} />
       </div>
       <div className={styles.productInfo}>
-        <h3>Friheten</h3>
-        <p>180*200</p>
+        <h3>{props.name}</h3>
+        <p>{props.dimension}</p>
+        <li key={props._id}>
+          {props.name} - {props.price}€
+        </li>
       </div>
       <div className={styles.evaluation}>
         <span className={styles.etoiles}>★★★★☆</span>
@@ -25,8 +28,9 @@ function Product() {
       </div>
       <div className={styles.productActions}>
         <FaHeart className={styles.favButton} />
-        <p className={styles.price}>199€</p>
+        <p className={styles.price}>{props.price}€</p>
         <TbShoppingCartPlus className={styles.buyButton} />
+
       </div>
     </div>
   )

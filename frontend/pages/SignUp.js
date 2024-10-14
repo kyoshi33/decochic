@@ -23,6 +23,7 @@ function SignUp() {
   const [adresse, setAdresse] = useState('');
   const [codePostal, setCodePostal] = useState('');
   const [ville, setVille] = useState('');
+  const [civilite, setCivilite] = useState('');
   const [errorLogin, setErrorLogin] = useState(true);
 
   const dispatch = useDispatch();
@@ -41,11 +42,11 @@ function SignUp() {
     const fetchLogin = await fetch('http://localhost:3000/users/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, firstName, email, password, adresse, codePostal, ville }),
+      body: JSON.stringify({ name, firstName, email, password, adresse, codePostal, ville, civilite }),
     })
     const res = await fetchLogin.json()
     if (res.result) {
-      dispatch(login({ token: res.token, name: res.name, firstName: res.firstName, email: res.email }));
+      dispatch(login({ token: res.token, civilite: res.civilite, name: res.name, firstName: res.firstName, email: res.email }));
       router.push({ pathname: '/Accueil' })
       console.log('validation ok')
     } else {
@@ -63,7 +64,8 @@ function SignUp() {
           <h2>Bienvenue chez ConfoChic.</h2>
           <div className={styles.formGroup}>
             <label className={styles.label}>Civilité</label>
-            <select className={styles.select}{...register("civilite", { required: "Civilité requise" })}>
+            <select className={styles.select}{...register("civilite", { required: "Civilité requise" })}
+              onChange={(e) => setCivilite(e.target.value)} value={civilite}>
               <option value="">Sélectionner</option>
               <option value="Monsieur">Monsieur</option>
               <option value="Madame">Madame</option>

@@ -1,5 +1,4 @@
 import styles from '../styles/Footer.module.css';
-import Link from 'next/link';
 import { useState } from 'react';
 
 import AvisModal from './AvisModal';
@@ -26,11 +25,9 @@ function Footer() {
     e.preventDefault(); // empêche le comportement par défaut si nécessaire
     window.open('mailto:contact@info.com?subject=Demande de contact&body=Bonjour,', '_self');
   };
-
   const clickInsta = () => {
     window.open('https://www.instagram.com/julien_mlln', '_blank');
   };
-
   const clickLinkedIn = () => {
     window.open('http://linkedin.com/in/julien-morillon', '_blank');
   }

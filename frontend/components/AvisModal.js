@@ -8,7 +8,7 @@ import { useState } from 'react';
 //Composant signalement / enregistrement du texte / informations id
 function AvisModal(props) {
 
-  const [modalOpen, setModalOpen] = useState(false);
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");

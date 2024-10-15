@@ -1,6 +1,9 @@
 import styles from '../styles/Product.module.css';
+import { useState } from 'react';
 import { TbShoppingCartPlus } from "react-icons/tb";
 import { FaHeart } from "react-icons/fa";
+import BuyModal from './BuyModal';
+
 
 
 
@@ -9,6 +12,14 @@ import { FaHeart } from "react-icons/fa";
 
 function Product(props) {
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openBuyModal = () => {
+    setIsModalOpen(true)
+  }
+  const closeBuyModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className={styles.productCard}>
@@ -29,8 +40,10 @@ function Product(props) {
       <div className={styles.productActions}>
         <FaHeart className={styles.favButton} />
         <p className={styles.price}>{props.price}€</p>
-        <TbShoppingCartPlus className={styles.buyButton} />
-
+        <TbShoppingCartPlus onClick={() => { openBuyModal(), console.log('Icon clicked') }} className={styles.buyButton} />
+        <BuyModal isOpen={isModalOpen}
+          onRequestClose={closeBuyModal}
+        />
       </div>
     </div>
   )

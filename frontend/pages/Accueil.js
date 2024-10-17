@@ -5,6 +5,9 @@ import Header from "../components/Header";
 import Product from "../components/product";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
+import BuyModal from '../components/BuyModal';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from "../reducers/user";
 
 function Accueil() {
 
@@ -14,6 +17,27 @@ function Accueil() {
   const [search, setSearch] = useState('');
   const [nothing, setNothing] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.user.value)
+
+
+
+  const handleProductClick = (product) => {
+    setSelectedProduct(product); // Met à jour le produit sélectionné
+    setIsModalOpen(true); // Ouvre la modal
+    dispatch(addToCart(product))
+  };
+  const closeBuyModal = () => {
+    setIsModalOpen(false);
+  };
+
+
 
 
   // Fonction pour récupérer les produits par catégorie
@@ -88,10 +112,12 @@ function Accueil() {
       image={product.image}
       dimension={product.dimension}
       price={product.price}
+      product={product}
+      onProductClick={handleProductClick}
+
+
     />
   ));
-
-
 
   return (
     <>
@@ -125,6 +151,10 @@ function Accueil() {
             <p>Aucun produit trouvé pour cette recherche.</p>
           )};
         </div>
+        <BuyModal isOpen={isModalOpen}
+          onRequestClose={closeBuyModal}
+          product={selectedProduct}
+        />
       </div >
 
       < Footer ></Footer >

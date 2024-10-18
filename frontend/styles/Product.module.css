@@ -60,6 +60,12 @@
 
 .favButtonLiked {
   color: red;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
 }
 
 .price {

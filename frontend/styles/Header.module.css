@@ -154,6 +154,35 @@
   font-weight: bold;
 }
 
+.cart {
+  position: absolute;
+  bottom: -20px;
+  right: 140px;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+
+.cart active {
+  color: green;
+  /* Couleur lorsque des articles sont ajoutés au panier */
+}
+
+.quantity {
+  background-color: #779b4fda;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 20px;
+  position: absolute;
+  position: absolute;
+  bottom: -20px;
+  right: 90px;
+  cursor: pointer;
+
+}
+
 .exitIcon {
   position: absolute;
   bottom: -20px;

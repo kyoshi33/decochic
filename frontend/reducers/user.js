@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   value: {
-    value: { isLogged: false, token: null, civilite: null, firstName: null, name: null, email: null, items: [], liked: [] },
+    value: { isLogged: false, token: null, civilite: null, firstName: null, name: null, email: null, liked: [] },
   },
 };
 
@@ -30,17 +30,9 @@ export const userSlice = createSlice({
     setLikedList: (state, action) => {
       state.value.liked = action.payload;
     },
-    addToCart: (state, action) => {
-      state.value.items.push = action.payload;
-      console.log(addToCart);
-    },
-
-    removeCart: (state, action) => {
-      state.value.items.filter(item => item._id !== action.payload._id);
-    },
 
   },
 });
 
-export const { login, logout, setLikedList, addToCart, removeCart } = userSlice.actions;
+export const { login, logout, setLikedList } = userSlice.actions;
 export default userSlice.reducer;

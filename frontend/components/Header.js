@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux';
 import { ImExit } from "react-icons/im";
 import { useDispatch } from "react-redux";
 import { logout } from '../reducers/user';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { FaCartArrowDown } from "react-icons/fa";
+
 
 
 
@@ -16,8 +18,8 @@ function Header() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
   const router = useRouter();
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
-  console.log('Valeur de user :', user);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -47,6 +49,16 @@ function Header() {
       <div className={styles.container}>
         <div className={styles.profilConnecter}>
           <h3 className={styles.text}>Bonjour {user.civilite} {lettreEnCapital(user.firstName)} !</h3> <span className={styles.icon}>👋</span>
+          <Link href='/Shop' >
+            <div>
+              <FaCartArrowDown
+                className={`${styles.cart} ${totalQuantity > 0 ? 'active' : ''}`}
+              />
+              {totalQuantity > 0 && (
+                <span className={styles.quantity}>{totalQuantity}</span>
+              )}
+            </div>
+          </Link>
           <Link href='/Accueil' >
             <ImExit className={styles.exitIcon} onClick={() => handleLogout()} />
           </Link>

@@ -2,10 +2,10 @@ import styles from '../styles/BuyModal.module.css';
 import React from "react";
 import Modal from 'react-modal';
 import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../reducers/user";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../reducers/cart";
 import { FaCheckCircle } from 'react-icons/fa';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BsPlusCircle } from 'react-icons/bs';
 
 function BuyModal(props) {
@@ -13,7 +13,6 @@ function BuyModal(props) {
   const dispatch = useDispatch();
   const [addedItems, setAddedItems] = useState([]);
   // const user = useSelector((state => state.user.value));
-
   // if (!user.token) {
   //   router.push({ pathname: '/Accueil' });
   //   console.error("merci de vous connecter");

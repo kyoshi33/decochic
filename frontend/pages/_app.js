@@ -7,9 +7,10 @@ import storage from 'redux-persist/lib/storage';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import user from '../reducers/user'
+import cart from '../reducers/cart';
 
 
-const reducers = combineReducers({ user });
+const reducers = combineReducers({ user, cart });
 
 const persistConfig = { key: 'confochic', storage };
 

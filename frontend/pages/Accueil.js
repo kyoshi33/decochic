@@ -2,12 +2,13 @@
 import styles from "../styles/Accueil.module.css"
 import Head from 'next/head';
 import Header from "../components/Header";
-import Product from "../components/product";
+import Product from "../components/Product";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import BuyModal from '../components/BuyModal';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart } from "../reducers/user";
+import { addToCart } from "../reducers/cart";
+import { setLikedList } from "../reducers/user";
 
 function Accueil() {
 
@@ -18,14 +19,11 @@ function Accueil() {
   const [nothing, setNothing] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-
+  const [likedProducts, setLikedProducts] = useState([]);
 
   const dispatch = useDispatch()
   const user = useSelector((state) => state.user.value)
-
 
 
   const handleProductClick = (product) => {
@@ -37,8 +35,18 @@ function Accueil() {
     setIsModalOpen(false);
   };
 
-
-
+  const handleHeart = (product) => {
+    setSelectedProduct(product);
+    setLikedProducts((prevLikedProducts) => {
+      if (prevLikedProducts.some(p => p._id === product._id)) {
+        // Si le produit est déjà liké, le retirer de la liste
+        return prevLikedProducts.filter(p => p._id !== product._id);
+      } else {
+        // Sinon, l'ajouter à la liste des produits likés
+        return [...prevLikedProducts, product];
+      }
+    });
+  }
 
   // Fonction pour récupérer les produits par catégorie
   useEffect(() => {
@@ -56,22 +64,6 @@ function Accueil() {
     };
     fetchProductsByCategory(categorie);
   }, [categorie]);
-
-
-  // // Charger les canapés au lancement de la page
-  // useEffect(() => {
-  //   const fetchDefaultCanape = async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:3000/products?categorie=canape');
-  //       const data = await response.json();
-  //       setCanape(data);
-  //     } catch (error) {
-  //       console.error('Erreur lors de la récupération des canapés par défaut :', error);
-  //     }
-  //   };
-  //   fetchDefaultCanape();
-  // }, []);
-
 
   // Fonction pour gérer la recherche
   const handleSearch = async () => {
@@ -108,14 +100,14 @@ function Accueil() {
   const listeProduitsAffiches = produitsAffiches.map((product) => (
     <Product
       key={product._id}
+      _id={product._id}
       name={product.name}
       image={product.image}
       dimension={product.dimension}
       price={product.price}
       product={product}
       onProductClick={handleProductClick}
-
-
+      onHeartClick={handleHeart}
     />
   ));
 
@@ -165,3 +157,18 @@ function Accueil() {
 }
 
 export default Accueil;
+
+
+// // Charger les canapés au lancement de la page
+// useEffect(() => {
+//   const fetchDefaultCanape = async () => {
+//     try {
+//       const response = await fetch('http://localhost:3000/products?categorie=canape');
+//       const data = await response.json();
+//       setCanape(data);
+//     } catch (error) {
+//       console.error('Erreur lors de la récupération des canapés par défaut :', error);
+//     }
+//   };
+//   fetchDefaultCanape();
+// }, []);

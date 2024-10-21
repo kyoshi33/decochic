@@ -12,6 +12,7 @@ const usersSchema = mongoose.Schema({
     codePostal: Number,
     ville: String,
   }],
+  liked: [{ type: mongoose.Schema.Types.ObjectId, ref: 'products' }],
   commandes: [{
     orderId: { type: mongoose.Schema.Types.ObjectId, ref: 'orders', required: false },
     producId: { type: mongoose.Schema.Types.ObjectId, ref: 'products', required: false },

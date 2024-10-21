@@ -48,6 +48,7 @@ function Accueil() {
     });
   }
 
+
   // Fonction pour récupérer les produits par catégorie
   useEffect(() => {
     const fetchProductsByCategory = async () => {

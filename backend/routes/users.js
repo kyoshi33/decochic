@@ -36,9 +36,11 @@ router.post('/signup', (req, res) => {
         email: req.body.email,
         password: hash,
         token: uid2(32),
-        adresse: req.body.adresse,
-        codePostal: req.body.codePostal,
-        ville: req.body.ville,
+        adresses: [{
+          adresse: req.body.adresse,
+          codePostal: req.body.codePostal,
+          ville: req.body.ville,
+        }]
       });
       newUser.save().then(newDoc => {
         res.json({ result: true, token: newDoc.token, civilite: req.body.civilite, firstName: req.body.firstName, name: req.body.name, email: req.body.email });
@@ -60,11 +62,44 @@ router.post('/signin', (req, res) => {
   User.findOne({ email: req.body.email })
     .then(data => {
       if (data && bcrypt.compareSync(req.body.password, data.password)) {
-        res.json({ result: true, token: data.token, firstName: data.firstName, name: data.name, email: data.email });
+        res.json({ result: true, token: data.token, firstName: data.firstName, name: data.name, email: data.email, liked: data.liked });
       } else {
         res.json({ result: false, error: 'Champs manquants ou vides' })
       }
     })
+});
+
+
+//Recuperer les likes de l'utilisateur
+router.post("/like", async (req, res) => {
+  // Vérifier que les champs sont tous fournis
+  if (!checkBody(req.body, ['token', 'email', 'id'])) {
+    return;
+  }
+  // Authentification de l'utilisateur
+  const foundUser = await User.findOne({ email: req.body.email, token: req.body.token })
+  if (!foundUser) { return res.json({ result: false, error: 'Access denied' }) };
+  // Ajouter ou retirer un like
+  if (foundUser.liked.includes(req.body._id)) {
+    // Retirer le like si déjà présent
+    await User.updateOne({ email: req.body.email }, { $pull: { liked: req.body._id } });
+  } else {
+    // Ajouter le like si pas encore présent
+    await User.updateOne({ email: req.body.email }, { $push: { liked: req.body._id } });
+  }
+  const updatedUser = await User.findOne({ email: req.body.email, token: req.body.token })
+  res.json({ result: true, liked: updatedUser.liked })
+})
+
+
+//Recuperer les likes sur les produits
+router.get("/profile/likes", async (req, res) => {
+  const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('liked');
+  if (!foundUser) {
+    return res.json({ result: false, error: 'Access denied' });
+  }
+
+  res.json({ result: true, likedProducts: foundUser.liked });
 });
 
 

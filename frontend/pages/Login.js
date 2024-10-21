@@ -36,7 +36,7 @@ function Login() {
     })
     const res = await fetchConnexion.json()
     if (res.result) {
-      dispatch(login({ token: res.token, name: res.name, firstName: res.firstName, email: res.email }));
+      dispatch(login({ token: res.token, name: res.name, firstName: res.firstName, email: res.email, liked: res.liked, }));
       router.push({ pathname: '/Accueil' })
       console.log('validation ok')
     } else {

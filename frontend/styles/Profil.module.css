@@ -86,3 +86,41 @@
   background-color: rgb(214, 208, 187);
   color: black;
 }
+
+.container {
+  padding: 20px;
+}
+
+.tabBar {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.selectedTab {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.productsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Ajoute un espacement entre les produits */
+}
+
+.tabContent {
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 10px;
+}

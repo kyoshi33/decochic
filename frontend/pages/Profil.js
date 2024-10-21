@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../reducers/user';
 import { useRouter } from 'next/router';
-import { setLikedList } from '../reducers/user';
 
 function Profil() {
 
@@ -17,21 +16,23 @@ function Profil() {
   const [reRender, setReRender] = useState(false);
 
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.value)
-  const router = useRouter()
+  const user = useSelector((state) => state.user.value);
+  const router = useRouter();
 
-
+  // Redirection si non authentifié
   useEffect(() => {
     if (!user.token) {
       router.push({ pathname: '/' });
     }
   }, [user.token]);
 
+  // Déconnexion
   const handleLogout = () => {
     dispatch(logout());
-    router.push({ pathname: '/' })
+    router.push({ pathname: '/' });
   }
-  // Recuperation et mise a jour des likes
+
+  // Récupération des produits likés
   const clickMesLikes = () => {
     const { email, token } = user;
     fetch(`http://localhost:3000/users/likes?email=${email}&token=${token}`, {
@@ -40,16 +41,15 @@ function Profil() {
     })
       .then(response => response.json())
       .then(data => {
-        if (!data) {
-          console.error('Erreur lors de la récupération des likes');
+        if (!data || !Array.isArray(data.likedProducts)) {
+          console.error('Erreur lors de la récupération des likes ou données invalides');
         } else {
-          setMesLikes(data.liked);  // Met à jour le state avec les produits likés
+          setMesLikes(data.likedProducts);  // Met à jour le state avec les produits likés
         }
       });
   };
 
-
-  // Fonction pour afficher mes achats
+  // Récupération des achats
   const clickMesAchats = () => {
     const { email, token } = user;
     fetch(`http://localhost:3000/users/commandes?email=${email}&token=${token}`, {
@@ -58,27 +58,25 @@ function Profil() {
     })
       .then(response => response.json())
       .then(data => {
-        if (!data) {
-          console.error('Erreur lors de la récupération des achats');
+        if (!data || !Array.isArray(data.commandes)) {
+          console.error('Erreur lors de la récupération des achats ou données invalides');
         } else {
           setMesAchats(data.commandes);  // Met à jour le state avec les commandes
         }
       });
   };
 
+  // Gestion des onglets pour afficher les produits likés ou les achats
   useEffect(() => {
     if (selectedTab === 1) {
       clickMesLikes();
     } else if (selectedTab === 2) {
       clickMesAchats();
     }
-  }, [selectedTab, reRender]);
-
-  const refresh = () => {
-    setReRender(!reRender);
-  }
+  }, [selectedTab]);
 
 
+  // Générer la liste des produits likés
   const listeProduitsLikes = mesLikes.map((product) => (
     <Product
       key={product._id}
@@ -86,15 +84,15 @@ function Profil() {
       name={product.name}
       image={product.image}
       dimension={product.dimension}
+      description={product.description}
       price={product.price}
       product={product}
-      onProductClick={handleProductClick}
-      onHeartClick={handleHeart}
-      reRender={refresh}
+      onProductClick={() => console.log('Product clicked:', product._id)}
+      onHeartClick={() => console.log('Like clicked:', product._id)}
     />
   ));
 
-
+  // Générer la liste des produits achetés
   const listeProduitsAcheter = mesAchats.map((product) => (
     <Product
       key={product._id}
@@ -104,76 +102,70 @@ function Profil() {
       dimension={product.dimension}
       price={product.price}
       product={product}
-      onProductClick={handleProductClick}
-      onHeartClick={handleHeart}
-      reRender={refresh}
+      onProductClick={() => console.log('Product clicked:', product._id)}
+      onHeartClick={() => console.log('Like clicked:', product._id)}
     />
   ));
 
-
-  let display =
-    <div className={styles.modelChoiceContainer}>
-      {listeProduitsLikes}
-    </div>
+  // Affichage en fonction de l'onglet sélectionné
+  let display;
   if (selectedTab === 1) {
-    display =
+    display = (
       <div className={styles.modelChoiceContainer}>
         <div className={styles.scrollWindow}>
-          <div className={styles.promptCard} >
-            {listeProduitsLikes}
-          </div>
+          {listeProduitsLikes}
         </div>
       </div>
+    );
   } else if (selectedTab === 2) {
-    display =
+    display = (
       <div className={styles.modelChoiceContainer}>
         <div className={styles.scrollWindow}>
-          <div className={styles.promptCard} >
-            {listeProduitsAcheter}
-          </div>
+          {listeProduitsAcheter}
         </div>
       </div>
+    );
   }
-
-
-
-
-
-
 
   return (
     <>
       <Head>
         <title>ConfoChic</title>
       </Head>
-      <Header></Header>
+      <Header />
       <div className={styles.container}>
-
-
-        <div className={styles.selectModelContainer}>
-          <div className={styles.tabBar}>
-            <div className={selectedTab === 1 ? styles.selectedTab : styles.tab} onClick={() => { setSelectedTab(1) }} >
-              Produits Favoris
-            </div>
-            <div className={selectedTab === 2 ? styles.selectedTab : styles.tab} onClick={() => { setSelectedTab(2) }} >
-              Mes achats
-            </div>
+        {/* Onglets pour basculer entre produits favoris et achats */}
+        <div className={styles.tabBar}>
+          <div
+            className={selectedTab === 1 ? styles.selectedTab : styles.tab}
+            onClick={() => setSelectedTab(1)}
+          >
+            Produits Favoris
           </div>
-          <div className={styles.display}>
-            {display}
-          </div>
-        </div>
-        <div className={styles.footer}>
-          <div className={styles.btn} onClick={() => router.push('/Accueil')}>
-            Retour
+          <div
+            className={selectedTab === 2 ? styles.selectedTab : styles.tab}
+            onClick={() => setSelectedTab(2)}
+          >
+            Mes Achats
           </div>
         </div>
-      </div >
 
-      < Footer ></Footer >
+        {/* Affichage conditionnel des produits likés ou des achats */}
+        <div className={styles.tabContent}>
+          {selectedTab === 1 ? (
+            <div className={styles.productsContainer}>
+              {listeProduitsLikes.length > 0 ? listeProduitsLikes : <p>Pas de produits favoris pour l'instant.</p>}
+            </div>
+          ) : (
+            <div className={styles.productsContainer}>
+              {listeProduitsAcheter.length > 0 ? listeProduitsAcheter : <p>Pas d'achats effectués pour l'instant.</p>}
+            </div>
+          )}
+        </div>
+      </div>
+      <Footer />
     </>
   );
 }
 
 export default Profil;
-

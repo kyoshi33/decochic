@@ -104,6 +104,22 @@ router.get("/profile/likes", async (req, res) => {
 
 
 
+router.get("/likes", async (req, res) => {
+  // Récupère l'utilisateur à partir de l'email et du token
+  const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('liked');
+  // Si l'utilisateur n'est pas trouvé, retourne une erreur
+  if (!foundUser) {
+    console.log('Accès refusé - Utilisateur introuvable');  // Log en cas d'erreur
+    return res.json({ result: false, error: 'Access denied' });
+  }
+  // Affiche dans la console les produits likés avant de les renvoyer
+  console.log('Produits likés renvoyés:', foundUser.liked);  // Log des produits likés
+  // Renvoie les produits likés au frontend
+  res.json({ result: true, likedProducts: foundUser.liked });
+});
+
+
+
 
 
 

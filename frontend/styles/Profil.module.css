@@ -1,126 +1,69 @@
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  font-family: 'Square';
-  background-color: rgb(250, 248, 240);
-  color: black;
+  padding: 30px;
 }
 
-.button {
-  background-color: '#f44336';
-  color: 'white';
-  padding: '10px 20px';
-  border-radius: '5px';
-  border: 'none';
-  cursor: 'pointer';
-  font-size: '16px';
-}
-
-.containerSearch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  height: 40vh;
-  width: 100vw;
-  font-family: 'Arial';
-  background-color: rgb(214, 208, 187);
-  color: black;
-  gap: 20px;
-}
-
-.inputSearch {
-  height: 5vh;
-  width: 30vw;
-}
-
-.btnInscription {
-  background-color: #D9D1B5;
-  color: #2B2B2B;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  font-size: 18px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btnInscription:hover {
-  transform: translateY(-2px);
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
-}
-
-.btnConnexion {
-  background-color: #B8C2AE;
-  color: #2B2B2B;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  font-size: 18px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btnConnexion:hover {
-  transform: translateY(-2px);
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
-
-}
-
-.containerProduct {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-  height: auto;
-  width: 100vw;
-  font-family: 'Arial';
-  background-color: rgb(214, 208, 187);
-  color: black;
-}
-
-.container {
-  padding: 20px;
+.scrollWindow {
+  border: solid rgb(46, 49, 234) 1px;
 }
 
 .tabBar {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  /* Onglets centrés */
   margin-bottom: 20px;
 }
 
-.tab {
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-}
-
+.tab,
 .selectedTab {
   padding: 10px 20px;
   cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
+  margin: 0 10px;
+  font-family: Arial, sans-serif;
   border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.selectModelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 90vh;
+  width: 100vw;
+  font-family: 'Arial';
+  color: white;
+}
+
+.tab {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+.selectedTab {
+  background-color: #B8C2AE;
+  color: white;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .productsContainer {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Grille responsive */
   gap: 20px;
-  /* Ajoute un espacement entre les produits */
+  /* Espacement entre les produits */
 }
 
-.tabContent {
-  padding: 20px;
-  background-color: #fafafa;
+.productCard {
+  background-color: #fff;
   border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .tabBar {
+    flex-direction: column;
+    /* Pour empiler les onglets sur petit écran */
+  }
 }

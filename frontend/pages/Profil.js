@@ -58,10 +58,10 @@ function Profil() {
     })
       .then(response => response.json())
       .then(data => {
-        if (!data || !Array.isArray(data.commandes)) {
+        if (!data || !Array.isArray(data.commandesList)) {
           console.error('Erreur lors de la récupération des achats ou données invalides');
         } else {
-          setMesAchats(data.commandes);  // Met à jour le state avec les commandes
+          setMesAchats(data.commandesList);  // Met à jour le state avec les commandes
         }
       });
   };
@@ -94,6 +94,7 @@ function Profil() {
 
   // Générer la liste des produits achetés
   const listeProduitsAcheter = mesAchats.map((product) => (
+
     <Product
       key={product._id}
       _id={product._id}
@@ -105,6 +106,7 @@ function Profil() {
       onProductClick={() => console.log('Product clicked:', product._id)}
       onHeartClick={() => console.log('Like clicked:', product._id)}
     />
+
   ));
 
   // Affichage en fonction de l'onglet sélectionné
@@ -133,8 +135,9 @@ function Profil() {
         <title>ConfoChic</title>
       </Head>
       <Header />
+
+      {/* Onglets pour basculer entre produits favoris et achats */}
       <div className={styles.container}>
-        {/* Onglets pour basculer entre produits favoris et achats */}
         <div className={styles.tabBar}>
           <div
             className={selectedTab === 1 ? styles.selectedTab : styles.tab}
@@ -151,15 +154,19 @@ function Profil() {
         </div>
 
         {/* Affichage conditionnel des produits likés ou des achats */}
-        <div className={styles.tabContent}>
+        <div className={styles.productsContainer}>
           {selectedTab === 1 ? (
-            <div className={styles.productsContainer}>
-              {listeProduitsLikes.length > 0 ? listeProduitsLikes : <p>Pas de produits favoris pour l'instant.</p>}
-            </div>
+            listeProduitsLikes.length > 0 ? (
+              listeProduitsLikes
+            ) : (
+              <p>Pas de produits favoris pour l'instant...</p>
+            )
           ) : (
-            <div className={styles.productsContainer}>
-              {listeProduitsAcheter.length > 0 ? listeProduitsAcheter : <p>Pas d'achats effectués pour l'instant.</p>}
-            </div>
+            listeProduitsAcheter.length > 0 ? (
+              listeProduitsAcheter
+            ) : (
+              <p>Pas d'achats effectués pour l'instant...</p>
+            )
           )}
         </div>
       </div>

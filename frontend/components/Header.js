@@ -26,9 +26,13 @@ function Header() {
     router.push({ pathname: '/Accueil' })
   }
 
+  const handleProfil = () => {
+    router.push({ pathname: '/Profil' })
+  }
+
   const lettreEnCapital = (string) => {
     if (typeof string !== 'string' || string.length === 0) {
-      return 'toi'; // Retourne une chaîne vide si l'argument n'est pas une chaîne ou est vide
+      return 'toi';
     }
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   };
@@ -48,7 +52,7 @@ function Header() {
     topMenu =
       <div className={styles.container}>
         <div className={styles.profilConnecter}>
-          <h3 className={styles.text}>Bonjour {user.civilite} {lettreEnCapital(user.firstName)} !</h3> <span className={styles.icon}>👋</span>
+          <h3 className={styles.text} onClick={() => handleProfil()}>Bonjour {user.civilite} {lettreEnCapital(user.firstName)} !</h3> <span className={styles.icon}>👋</span>
           <Link href='/Shop' >
             <div>
               <FaCartArrowDown

@@ -12,11 +12,6 @@ function BuyModal(props) {
   const router = useRouter();
   const dispatch = useDispatch();
   const [addedItems, setAddedItems] = useState([]);
-  // const user = useSelector((state => state.user.value));
-  // if (!user.token) {
-  //   router.push({ pathname: '/Accueil' });
-  //   console.error("merci de vous connecter");
-  // }
 
 
   const onClose = () => {
@@ -70,7 +65,6 @@ function BuyModal(props) {
 
       <div className={styles.recommendations}>
         <h3>Pour compléter votre commande</h3>
-        {/* {recommendations.map((item) => ( */}
         {recommendations.map((item) => (
           <div key={item.id} className={styles.recommendationItem}>
             <img src={item.image} alt={item.name} className={styles.recommendationImage} />
@@ -88,10 +82,10 @@ function BuyModal(props) {
             )}</button>
           </div>
         ))}
-      </div>
-      <div className={styles.modalFooter}>
-        <button onClick={onClose} className={styles.continueShoppingButton}>Continuer les achats</button>
-        <button onClick={openShopping} className={styles.viewCartButton}>Voir mon panier</button>
+        <div className={styles.modalFooter}>
+          <button onClick={onClose} className={styles.continueShoppingButton}>Continuer les achats</button>
+          <button onClick={openShopping} className={styles.viewCartButton}>Voir mon panier</button>
+        </div>
       </div>
     </Modal>
   );
@@ -99,35 +93,3 @@ function BuyModal(props) {
 
 
 export default BuyModal;
-{/* <img src="housse.jpg" alt="housse de canape" className={styles.recommendationImage} />
-          <div>
-            <h4>Housse de Canapé extensible</h4>
-            <p>129€</p>
-          </div>
-          <button onClick={() => addToCart(product)} className={styles.addToCartButton}>Ajouter</button>
-        </div>
-        <div className={styles.recommendationItem}>
-          <img src="pattins.jpg" alt="protection pieds" className={styles.recommendationImage} />
-          <div>
-            <h4>Proteger votre sol avec nos pattins</h4>
-            <p>5,99€</p>
-          </div>
-          <button onClick={() => addToCart(product)} className={styles.addToCartButton}>Ajouter</button>
-        </div>
-        <div className={styles.recommendationItem}>
-          <img src="plaid.jpg" alt="plaid" className={styles.recommendationImage} />
-          <div>
-            <h4>Plaid gris/blanc  140*200cm </h4>
-            <p>9,99€</p>
-          </div>
-          <button onClick={() => addToCart(product)} className={styles.addToCartButton}>Ajouter</button>
-        </div>
-        <div className={styles.recommendationItem}>
-          <img src="rouleau.jpg" alt="rouleau de nettoyage" className={styles.recommendationImage} />
-          <div>
-            <h4>Entretien de vos produits, brosses</h4>
-            <p>14,99€</p>
-          </div>
-          <button onClick={() => addToCart(product)} className={styles.addToCartButton}>Ajouter</button>
-        </div>
-        ))} */}

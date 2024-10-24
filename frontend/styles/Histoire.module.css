@@ -1,10 +1,57 @@
-.container {
+.textContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  padding: 50px 10%;
   width: 100vw;
-  font-family: 'Square';
+  font-family: 'Roboto', sans-serif;
   background-color: rgb(250, 248, 240);
-  color: black;
+  color: #333;
+}
+
+.titre {
+  font-size: 2.2rem;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  animation: fadeInDown 1s ease-out;
+}
+
+
+.texte {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.swiperSlide img {
+  display: block;
+  width: 100%;
+
+}
+
+.swiperSlide {
+  background-color: transparent;
+  width: 350px;
+  height: 350px;
+
+}
+
+.swiper {
+  width: 40%;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 350px;
+  height: 350px;
 }

@@ -11,13 +11,21 @@
   color: black;
 }
 
+.icone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  padding: 0;
+  background-color: rgb(214, 208, 187);
+}
+
 .contact {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  flex-grow: 1;
-  padding: 0;
   background-color: rgb(214, 208, 187);
 }
 
@@ -28,6 +36,7 @@
   gap: 20px;
   padding: 0 30px;
   background-color: rgb(214, 208, 187);
+  margin-top: 20px;
 }
 
 .btnContact,

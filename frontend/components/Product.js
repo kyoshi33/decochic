@@ -40,13 +40,6 @@ function Product(props) {
     dispatch(setLikedList(result.liked)); // Mise à jour de la liste des produits likés
   };
 
-
-
-
-
-
-
-
   return (
     <div className={styles.productCard}>
       <div className={styles.productImage}>

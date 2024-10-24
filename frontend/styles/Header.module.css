@@ -55,11 +55,19 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: 'Square';
+  font-family: 'Roboto', sans-serif;
   color: black;
   cursor: pointer;
+  margin-bottom: 50px;
 }
 
+.titre {
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+}
 
 .logo {
   padding: 0;
@@ -71,16 +79,17 @@
   width: 20vw;
   margin-top: 90px;
   cursor: pointer;
+
 }
 
 .topTitle {
-  background-color: #F4F1EB;
   height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 80px;
 }
 
 .title {
@@ -90,7 +99,9 @@
   text-align: center;
   letter-spacing: 3px;
   font-weight: bold;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 0;
+
 }
 
 .title span {
@@ -139,6 +150,7 @@
 .icon {
   font-size: 30px;
   margin-left: 10px;
+  margin-bottom: 90px;
 
 }
 
@@ -156,6 +168,10 @@
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  margin-bottom: 100px;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 
 .cart {
@@ -165,6 +181,7 @@
   font-size: 30px;
   color: black;
   cursor: pointer;
+  margin-bottom: 90px;
 }
 
 
@@ -184,14 +201,16 @@
   bottom: -20px;
   right: 90px;
   cursor: pointer;
+  margin-bottom: 90px;
 
 }
 
 .exitIcon {
   position: absolute;
   bottom: -20px;
-  right: 10px;
+  right: 40px;
   font-size: 30px;
   color: black;
   cursor: pointer;
+  margin-bottom: 90px;
 }

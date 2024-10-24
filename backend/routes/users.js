@@ -80,31 +80,31 @@ router.post("/like", async (req, res) => {
   const foundUser = await User.findOne({ email: req.body.email, token: req.body.token })
   if (!foundUser) { return res.json({ result: false, error: 'Access denied' }) };
   // Ajouter ou retirer un like
-  if (foundUser.liked.includes(req.body._id)) {
+  if (foundUser.liked.includes(req.body.id)) {
     // Retirer le like si déjà présent
-    await User.updateOne({ email: req.body.email }, { $pull: { liked: req.body._id } });
+    await User.updateOne({ email: req.body.email }, { $pull: { liked: req.body.id } });
   } else {
     // Ajouter le like si pas encore présent
-    await User.updateOne({ email: req.body.email }, { $push: { liked: req.body._id } });
+    await User.updateOne({ email: req.body.email }, { $push: { liked: req.body.id } });
   }
   const updatedUser = await User.findOne({ email: req.body.email, token: req.body.token })
   res.json({ result: true, liked: updatedUser.liked })
 })
 
 
-//Recuperer les likes sur les produits
-router.get("/profile/likes", async (req, res) => {
-  const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('liked');
-  if (!foundUser) {
-    return res.json({ result: false, error: 'Access denied' });
-  }
+// //Recuperer les likes sur les produits
+// router.get("/profile/likes", async (req, res) => {
+//   const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('liked');
+//   if (!foundUser) {
+//     return res.json({ result: false, error: 'Access denied' });
+//   }
 
-  res.json({ result: true, likedProducts: foundUser.liked });
-});
+//   res.json({ result: true, likedProducts: foundUser.liked });
+// });
 
 
 
-router.get("/likes", async (req, res) => {
+router.get("/likesProducts", async (req, res) => {
   // Récupère l'utilisateur à partir de l'email et du token
   const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('liked');
   // Si l'utilisateur n'est pas trouvé, retourne une erreur

@@ -26,16 +26,11 @@ function Profil() {
     }
   }, [user.token]);
 
-  // Déconnexion
-  const handleLogout = () => {
-    dispatch(logout());
-    router.push({ pathname: '/' });
-  }
 
   // Récupération des produits likés
   const clickMesLikes = () => {
     const { email, token } = user;
-    fetch(`http://localhost:3000/users/likes?email=${email}&token=${token}`, {
+    fetch(`http://localhost:3000/users/likesProducts?email=${email}&token=${token}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })

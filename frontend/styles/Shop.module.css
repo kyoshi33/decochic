@@ -1,5 +1,5 @@
 .container {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   font-family: 'Square';
   background-color: rgb(214, 208, 187);
@@ -67,4 +67,15 @@
   width: 30px;
   height: 30px;
   font-size: 18px;
+}
+
+.buyButton {
+  margin-left: auto;
+  background-color: #B8C2AE;
+  color: #2B2B2B;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

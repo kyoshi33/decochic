@@ -49,8 +49,8 @@
 
 .addToCartButton {
   margin-left: auto;
-  background-color: #007bff;
-  color: white;
+  background-color: #B8C2AE;
+  color: black;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
@@ -65,12 +65,14 @@
 
 .continueShoppingButton,
 .viewCartButton {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
+  margin-left: auto;
+  background-color: #B8C2AE;
+  color: #2B2B2B;
+  padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .viewCartButton {

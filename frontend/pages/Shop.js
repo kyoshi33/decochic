@@ -32,8 +32,7 @@ function Shop() {
     }
   }
 
-  const uploadPrompt = async () => {
-  }
+
 
   return (
     <>
@@ -63,7 +62,7 @@ function Shop() {
               ))}
               <div>
                 <h2>Total : {totalPrice.toFixed(2)}€</h2>
-                <button onClick={() => { handleValid(), alert('Commande validée') }}>Passer commande</button>
+                <button className={styles.buyButton} onClick={() => { handleValid(), alert('Commande validée') }}>Passer commande</button>
               </div>
             </div>
           ) : (

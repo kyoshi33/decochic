@@ -79,13 +79,13 @@ function Header() {
           <img src="logo.jpg" alt="Logo du site" className={styles.logo} />
         </Link>
         <Link href='/Histoire'>
-          <h2>Notre histoire</h2>
+          <h2 className={styles.titre}>Notre histoire</h2>
         </Link>
 
       </div>
       <div className={styles.topTitle}>
         <h1 className={styles.title}>Confo<span>Chic</span></h1>
-        <p className={styles.subtitle}>Sofas • Armchairs • Coffee Tables</p>
+        <p className={styles.subtitle}>Canapes • Chaises • Tables Basses</p>
       </div>
       {topMenu}
     </header>

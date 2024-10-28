@@ -7,6 +7,9 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../reducers/user';
 import { useRouter } from 'next/router';
+import { addToCart } from "../reducers/cart";
+import BuyModal from '../components/BuyModal';
+
 
 function Profil() {
 
@@ -14,6 +17,9 @@ function Profil() {
   const [mesLikes, setMesLikes] = useState([]);
   const [mesAchats, setMesAchats] = useState([]);
   const [reRender, setReRender] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
@@ -26,6 +32,15 @@ function Profil() {
     }
   }, [user.token]);
 
+
+  const handleProductClick = (product) => {
+    setSelectedProduct(product); // Met à jour le produit sélectionné
+    setIsModalOpen(true); // Ouvre la modal
+    dispatch(addToCart(product))
+  };
+  const closeBuyModal = () => {
+    setIsModalOpen(false);
+  };
 
   // Récupération des produits likés
   const clickMesLikes = () => {
@@ -47,17 +62,18 @@ function Profil() {
   // Récupération des achats
   const clickMesAchats = () => {
     const { email, token } = user;
-    fetch(`http://localhost:3000/users/commandes?email=${email}&token=${token}`, {
+    fetch(`http://localhost:3000/users/commandesProducts?email=${email}&token=${token}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
       .then(response => response.json())
       .then(data => {
-        if (!data || !Array.isArray(data.commandesList)) {
+        if (!data || !Array.isArray(data.commandesProducts)) {
           console.error('Erreur lors de la récupération des achats ou données invalides');
         } else {
-          setMesAchats(data.commandesList);  // Met à jour le state avec les commandes
+          setMesAchats(data.commandesProducts);  // Met à jour le state avec les commandes
         }
+        console.log("ma commande contient:", data)
       });
   };
 
@@ -82,26 +98,25 @@ function Profil() {
       description={product.description}
       price={product.price}
       product={product}
-      onProductClick={() => console.log('Product clicked:', product._id)}
+      onProductClick={handleProductClick}
       onHeartClick={() => console.log('Like clicked:', product._id)}
     />
   ));
 
-  // Générer la liste des produits achetés
-  const listeProduitsAcheter = mesAchats.map((product) => (
-
-    <Product
-      key={product._id}
-      _id={product._id}
-      name={product.name}
-      image={product.image}
-      dimension={product.dimension}
-      price={product.price}
-      product={product}
-      onProductClick={() => console.log('Product clicked:', product._id)}
-      onHeartClick={() => console.log('Like clicked:', product._id)}
-    />
-
+  // Générer la liste des produits achetés, recuperation des infos a travers productId
+  const listeProduitsAcheter = mesAchats.map((commande) => (
+    commande.productId.map((product) => (
+      <Product
+        key={product._id}
+        _id={product._id}
+        name={product.name}
+        image={product.image}
+        dimension={product.dimension}
+        description={product.description}
+        price={product.price}
+        isProfilePage={true}
+      />
+    ))
   ));
 
   // Affichage en fonction de l'onglet sélectionné
@@ -164,6 +179,10 @@ function Profil() {
             )
           )}
         </div>
+        <BuyModal isOpen={isModalOpen}
+          onRequestClose={closeBuyModal}
+          product={selectedProduct}
+        />
       </div>
       <Footer />
     </>

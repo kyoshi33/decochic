@@ -4,7 +4,6 @@ import Head from 'next/head';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';

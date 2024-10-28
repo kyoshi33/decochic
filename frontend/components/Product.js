@@ -10,11 +10,13 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 function Product(props) {
-  const { _id, name, image, dimension, price, onProductClick, onHeartClick } = props;
+  const { _id, name, image, dimension, price, description, onProductClick, onHeartClick, isProfilePage } = props;
   const [liked, setLiked] = useState(false);
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value)
+
+
 
 
   //Mise a jour des like à l'ouverture de la page
@@ -27,6 +29,10 @@ function Product(props) {
 
   // Route pour l'envoi et la sauvegarde des likes
   const like = async () => {
+    if (!user.token) {
+      alert("Merci de vous connecter pour liker un produit.");
+      return;
+    }
     const id = props._id;
     const { email, token } = user;
     const response = await fetch("http://localhost:3000/users/like", {
@@ -40,6 +46,15 @@ function Product(props) {
     dispatch(setLikedList(result.liked)); // Mise à jour de la liste des produits likés
   };
 
+  // Fonction pour gérer l'ajout au panier
+  const addToCart = () => {
+    if (!user.token) {
+      alert("Merci de vous connecter pour ajouter un produit au panier.");
+      return;
+    }
+    onProductClick(props);  // Appeler la fonction d'ajout au panier, reutiliser dans Accueil
+  };
+
   return (
     <div className={styles.productCard}>
       <div className={styles.productImage}>
@@ -48,22 +63,28 @@ function Product(props) {
       <div className={styles.productInfo}>
         <h3>{name}</h3>
         <p>{dimension}</p>
-        <li key={_id}>
-          {name} - {price}€
-        </li>
+        <p key={_id}>
+          {description}
+        </p>
       </div>
-      <div className={styles.evaluation}>
-        <span className={styles.etoiles}>★★★★☆</span>
-        <span className={styles.compteur}>(54)</span>
-      </div>
+      {!isProfilePage && (
+        <div className={styles.evaluation}>
+          <span className={styles.etoiles}>★★★★☆</span>
+          <span className={styles.compteur}>(54)</span>
+        </div>
+      )}
+      <p className={styles.price}>{price}€</p>
       <div className={styles.productActions}>
-        <FaHeart
-          onClick={() => like(props)}
-          className={liked ? styles.favButtonLiked : styles.favButton} />
-        <p className={styles.price}>{price}€</p>
-        <TbShoppingCartPlus onClick={() => {
-          onProductClick(props)
-        }} className={styles.buyButton} />
+        {!isProfilePage && (
+          <>
+            <FaHeart
+              onClick={() => like(props)}
+              className={liked ? styles.favButtonLiked : styles.favButton}
+            />
+            <TbShoppingCartPlus onClick={() => addToCart()} className={styles.buyButton} />
+          </>
+        )}
+
       </div>
     </div>
   )

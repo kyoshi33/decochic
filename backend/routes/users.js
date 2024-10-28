@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 require('../models/connection');
+const mongoose = require('mongoose');
 const User = require('../models/users');
 const uid2 = require('uid2');
 const bcrypt = require('bcrypt');
@@ -11,7 +12,7 @@ const { checkBody } = require('../modules/checkbody')
 router.get('/', async (req, res) => {
   try {
     const users = await User.find(); // Requête pour récupérer les produits
-    res.json(users); // Renvoi du résultat en format JSON
+    res.json(users);
   } catch (err) {
     res.status(500).send("Erreur lors de la récupération des produits");
   }
@@ -92,47 +93,76 @@ router.post("/like", async (req, res) => {
 })
 
 
-// //Recuperer les likes sur les produits
-// router.get("/profile/likes", async (req, res) => {
-//   const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('liked');
-//   if (!foundUser) {
-//     return res.json({ result: false, error: 'Access denied' });
-//   }
-
-//   res.json({ result: true, likedProducts: foundUser.liked });
-// });
-
-
-
+//Recuperer les likes de l'utilisateur pour la page profil
 router.get("/likesProducts", async (req, res) => {
   // Récupère l'utilisateur à partir de l'email et du token
   const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('liked');
   // Si l'utilisateur n'est pas trouvé, retourne une erreur
   if (!foundUser) {
-    console.log('Accès refusé - Utilisateur introuvable');  // Log en cas d'erreur
+    console.log('Accès refusé - Utilisateur introuvable');
     return res.json({ result: false, error: 'Access denied' });
   }
-  // Affiche dans la console les produits likés avant de les renvoyer
-  console.log('Produits likés renvoyés:', foundUser.liked);  // Log des produits likés
   // Renvoie les produits likés au frontend
   res.json({ result: true, likedProducts: foundUser.liked });
 });
 
 
-router.get("/commandes", async (req, res) => {
-  // Récupère l'utilisateur à partir de l'email et du token
-  const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('commandes');
+
+//Validation du paiement avec "pay" et mise a jour de l'utilisateur pour la page profil
+router.post("/commandes", async (req, res) => {
+  const { email, token, cart, paymentIntentId, totalAmount } = req.body;
+
+  // Trouver l'utilisateur avec l'email et le token
+  const foundUser = await User.findOne({ email, token });
 
   if (!foundUser) {
-    console.log('Accès refusé - Utilisateur introuvable');  // Log en cas d'erreur
-    return res.json({ result: false, error: 'Access denied' });
+    return res.status(403).json({ result: false, error: 'Accès refusé - Utilisateur introuvable' });
   }
-  // Affiche dans la console les produits likés avant de les renvoyer
-  console.log('Produits achetes renvoyés:', foundUser.commandes);  // Log des produits likés
-  // Renvoie les produits likés au frontend
-  res.json({ result: true, commandesList: foundUser.commandes });
+  console.log('Panier au moment de la commande:', cart);
+  try {
+    // Ajouter une nouvelle commande à l'utilisateur
+    const newCommande = {
+      orderId: new mongoose.Types.ObjectId(),
+      productId: cart.map(item => item._id), // Cart contient les IDs des produits achetés
+      createdAt: new Date(),
+      totalAmount: totalAmount,
+    };
+    foundUser.commandes.push(newCommande);
+    // Sauvegarder l'utilisateur avec la nouvelle commande
+    await foundUser.save();
+    console.log('Nouvelle commande avec produits:', JSON.stringify(newCommande, null, 2));
+    res.json({ result: true, message: 'Commande ajoutée avec succès', commandesList: foundUser.commandes });
+  } catch (error) {
+    console.error('Erreur lors de l\'enregistrement de la commande :', error);
+    res.status(500).json({ result: false, error: 'Erreur lors de l\'enregistrement de la commande' });
+  }
 });
 
+
+
+router.get("/commandesProducts", async (req, res) => {
+  try {
+    // Récupérer l'utilisateur et utiliser populate sur productId dans commandes
+    const foundUser = await User.findOne({ email: req.query.email, token: req.query.token })
+      .populate({
+        path: 'commandes.productId', // "Populate" la référence productId avec les détails des produits
+        model: 'products',
+      });
+    // Si l'utilisateur n'est pas trouvé, retourner une erreur
+    if (!foundUser) {
+      console.log('Accès refusé - Utilisateur introuvable');
+      return res.status(404).json({ result: false, error: 'Utilisateur introuvable' });
+    }
+
+    console.log('Produits achetés avec détails:', foundUser.commandes);
+
+    // Renvoyer les commandes avec les détails des produits achetés
+    res.json({ result: true, commandesProducts: foundUser.commandes });
+  } catch (error) {
+    console.error('Erreur lors de la récupération des produits achetés:', error);
+    res.status(500).json({ result: false, error: 'Erreur lors de la récupération des produits achetés' });
+  }
+});
 
 
 

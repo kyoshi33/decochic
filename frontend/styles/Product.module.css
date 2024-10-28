@@ -1,10 +1,10 @@
 .productCard {
-  padding: 10px;
-  border-radius: 10px;
+  padding: 5px;
+  border-radius: 25px;
   text-align: center;
   width: 300px;
   height: 550px;
-  margin: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,24 +12,21 @@
 }
 
 .productImage {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
-.productInfo {
-  padding: 5px;
-  border-radius: 5px;
-}
+
 
 .productImage img {
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 250px;
 }
 
 .evaluation {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 8px 0;
+
 }
 
 .etoiles {
@@ -46,6 +43,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: -80px;
+
 }
 
 .favButton,

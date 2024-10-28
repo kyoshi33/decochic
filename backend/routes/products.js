@@ -43,6 +43,15 @@ router.get('/search', async (req, res) => {
   }
 });
 
+router.get('/products', async (req, res) => {
+  try {
+    const products = await Product.find();  // Utilisez le modèle pour interagir avec la collection
+    res.json(products);
+  } catch (error) {
+    console.error('Erreur lors de la récupération des produits:', error);
+    res.status(500).json({ error: 'Erreur lors de la récupération des produits' });
+  }
+});
 
 
 

@@ -30,13 +30,328 @@
     ]
   },
   {
+    "name": "Canapé Scandinave 3 Places",
+    "categorie": "canape",
+    "price": 850,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728677149/scandinave_3places.jpg",
+    "description": "Canapé 3 places style scandinave avec pieds en bois.",
+    "dimension": "210x85x80 cm",
+    "couleur": "Bleu",
+    "matiere": "Tissu",
+    "motscles": [
+      "scandinave",
+      "3 places",
+      "bois"
+    ]
+  },
+  {
+    "name": "Canapé Convertible 2 Places",
+    "categorie": "canape",
+    "price": 600,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886388/canape-2places-classic-violet-159cm_w7edxx.jpg",
+    "description": "Canapé convertible de 2 places avec espace de rangement.",
+    "dimension": "180x90x80 cm",
+    "couleur": "Gris foncé",
+    "matiere": "Tissu",
+    "motscles": [
+      "convertible",
+      "2 places",
+      "rangement"
+    ]
+  },
+  {
+    "name": "Canapé Moderne",
+    "categorie": "canape",
+    "price": 1200,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886381/marly_1_2s_350-58_legs-oak-black_F02_yhdqln.jpg",
+    "description": "Canapé d'angle spacieux avec revêtement doux.",
+    "dimension": "250x150x80 cm",
+    "couleur": "Gris Bleu",
+    "matiere": "Velours",
+    "motscles": [
+      "confort",
+      "spacieux",
+      "velours"
+    ]
+  },
+  {
+    "name": "Canapé Vintage 2 Places",
+    "categorie": "canape",
+    "price": 700,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728677149/vintage_2places.jpg",
+    "description": "Canapé 2 places au design vintage.",
+    "dimension": "180x85x75 cm",
+    "couleur": "Marron",
+    "matiere": "Cuir",
+    "motscles": [
+      "vintage",
+      "cuir",
+      "2 places"
+    ]
+  },
+  {
+    "name": "Canapé Nuages 2 Places",
+    "categorie": "canape",
+    "price": 900,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886383/canape-nuage-2-places-beige-sable-1000-3-22-238683_1_b2mx39.jpg",
+    "description": "Canapé Chesterfield élégant en cuir.",
+    "dimension": "220x90x80 cm",
+    "couleur": "Blanc",
+    "matiere": "Tissu",
+    "motscles": [
+      "style",
+      "élégant",
+      "qualité"
+    ]
+  },
+  {
+    "name": "Canapé Modulable Contemporain",
+    "categorie": "canape",
+    "price": 1500,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886388/Blank1080x1080copy2-2023-11-02T155425.983_gunecy.png",
+    "description": "Canapé modulable pouvant s'adapter à tous les espaces.",
+    "dimension": "Varie selon la configuration",
+    "couleur": "Vert",
+    "matiere": "Tissu",
+    "motscles": [
+      "modulable",
+      "contemporain",
+      "polyvalent"
+    ]
+  },
+  {
+    "name": "Canapé en Lin Naturel",
+    "categorie": "canape",
+    "price": 950,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886376/Blank1080x1080copy2-2023-11-02T154710.586_iwb7bf.png",
+    "description": "Canapé 3 places en lin naturel doux et respirant.",
+    "dimension": "200x85x80 cm",
+    "couleur": "Rouge",
+    "matiere": "Lin",
+    "motscles": [
+      "lin",
+      "naturel",
+      "respirant"
+    ]
+  },
+  {
+    "name": "Canapé 2 places Compact",
+    "categorie": "canape",
+    "price": 450,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886382/canape-aldo-2-places-velours-brique_impzql.jpg",
+    "description": "Canapé d'angle idéal pour les petits espaces.",
+    "dimension": "190x140x80 cm",
+    "couleur": "Rouge",
+    "matiere": "Polyester",
+    "motscles": [
+      "budget",
+      "compact",
+      "petits espaces"
+    ]
+  },
+  {
+    "name": "Canapé 2 Places",
+    "categorie": "canape",
+    "price": 1100,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886378/canap_C3_A9-easy-2-places-noir-gris-ardoise-3.jpg_veo9lt.jpg",
+    "description": "Canapé avec fonctions relax et appui-têtes réglables.",
+    "dimension": "220x95x85 cm",
+    "couleur": "Gris",
+    "matiere": "Microfibre",
+    "motscles": [
+      "relax",
+      "appui-têtes",
+      "2 places"
+    ]
+  },
+  {
+    "name": "Canapé Design Minimaliste",
+    "categorie": "canape",
+    "price": 780,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886373/Canape-2-places-fixe-SHELL-25881684-A-1_zmg779.jpg",
+    "description": "Canapé design épuré, idéal pour les intérieurs modernes.",
+    "dimension": "200x80x75 cm",
+    "couleur": "Bleu",
+    "matiere": "Coton",
+    "motscles": [
+      "minimaliste",
+      "design",
+      "moderne"
+    ]
+  },
+  {
+    "name": "Canapé Moderne 2 Places",
+    "categorie": "canape",
+    "price": 670,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886372/vimle-2-seat-sofa-gunnared-medium-grey__0951873_pe801412_s5_dhxjpd.jpg",
+    "description": "Canapé moderne avec tissu épais.",
+    "dimension": "180x90x80 cm",
+    "couleur": "Gris",
+    "matiere": "Coton",
+    "motscles": [
+      "moderne",
+      "2 places",
+      "confortable"
+    ]
+  },
+  {
+    "name": "Canapé Hoya en chêne",
+    "categorie": "canape",
+    "price": 820,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886306/canape-hoya-en-chene-massif-et-tissu-gris-3-places-6177_qr0ihc.jpg",
+    "description": "Canapé classique et élégant.",
+    "dimension": "180x90x80 cm",
+    "couleur": "Blanc",
+    "matiere": "Velours",
+    "motscles": [
+      "matiere",
+      "classique",
+      "élégant"
+    ]
+  },
+  {
+    "name": "Canapé Cocooning",
+    "categorie": "canape",
+    "price": 550,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886306/canape-cocooning-tissu-beige-3-places-sense_a1dbgv.jpg",
+    "description": "Canapé cocooning, parfait pour un usage quotidien.",
+    "dimension": "150x80x70 cm",
+    "couleur": "Beige",
+    "matiere": "Polyester",
+    "motscles": [
+      "cocooning",
+      "compact",
+      "quotidien"
+    ]
+  },
+  {
+    "name": "Canapé en Velours 3 Places",
+    "categorie": "canape",
+    "price": 970,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886302/Camargue_Canap_Grey_Amb_V2_lsiyh6.jpg",
+    "description": "Canapé confortable avec revêtement en velours doux.",
+    "dimension": "220x90x80 cm",
+    "couleur": "Gris",
+    "matiere": "Velours",
+    "motscles": [
+      "velours",
+      "confort",
+      "3 places"
+    ]
+  },
+  {
+    "name": "Canapé Modulable Scandinave",
+    "categorie": "canape",
+    "price": 1250,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886294/EASY-canap_C3_A9-3placesottoman-NoirGraphite-GrisArdoise.jpg_v25ogo.jpg",
+    "description": "Canapé modulable avec options d'agencement variées.",
+    "dimension": "250x100x80 cm",
+    "couleur": "Gris foncé",
+    "matiere": "Tissu",
+    "motscles": [
+      "modulable",
+      "scandinave",
+      "polyvalent"
+    ]
+  },
+  {
+    "name": "Canapé Club 2 Places",
+    "categorie": "canape",
+    "price": 890,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886295/canape-convertible-3-places-fabric-mattress-160-cm-noelise-blue-duck_av4zpd.jpg",
+    "description": "Canapé club en cuir pour un style rétro.",
+    "dimension": "190x85x80 cm",
+    "couleur": "Bleu",
+    "matiere": "Tissu",
+    "motscles": [
+      "club",
+      "rétro",
+      "cuir"
+    ]
+  },
+  {
+    "name": "Canapé 3 Places Basique",
+    "categorie": "canape",
+    "price": 640,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886298/canape-easy-3-places-noir-gris-chine-2-1440x0-c-default_fohwaa.jpg",
+    "description": "Canapé 3 places basique et confortable.",
+    "dimension": "200x90x80 cm",
+    "couleur": "Beige",
+    "matiere": "Polyester",
+    "motscles": [
+      "basique",
+      "confortable",
+      "3 places"
+    ]
+  },
+  {
+    "name": "Canapé Tendance Boho",
+    "categorie": "canape",
+    "price": 980,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886301/tala-canape-3-places-convertible-en-tissu_ko2bmz.jpg",
+    "description": "Canapé au design bohème chic.",
+    "dimension": "200x85x80 cm",
+    "couleur": "Crème",
+    "matiere": "Lin",
+    "motscles": [
+      "boho",
+      "tendance",
+      "chic"
+    ]
+  },
+  {
+    "name": "Canapé d'angle",
+    "categorie": "canape",
+    "price": 720,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729886226/canape-dangle-gauche-velours-cotele-gris-fonce-modulable-3-places-lorenzo-haut-de-gamme-luxe-large-assise-xxl-meridienne--600x600_c6odvr.jpg",
+    "description": "Canapé extensible pour un confort maximal.",
+    "dimension": "200x90x80 cm",
+    "couleur": "Gris",
+    "matiere": "Coton",
+    "motscles": [
+      "extensible",
+      "moderne",
+      "angle"
+    ]
+  },
+  {
+    "name": "Canapé Lit Compact",
+    "categorie": "canape",
+    "price": 760,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728677149/91C4vb4PN8L_rweges.jpg",
+    "description": "Canapé lit compact parfait pour les petites pièces.",
+    "dimension": "190x90x75 cm",
+    "couleur": "Beige",
+    "matiere": "Polyester",
+    "motscles": [
+      "canapé lit",
+      "compact",
+      "polyvalent"
+    ]
+  },
+  {
+    "name": "Canapé 3 Places Loft",
+    "categorie": "canape",
+    "price": 950,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728677148/0013_CANE_LINE_INDOOR_2022_077_11935_ljr6ol.jpg",
+    "description": "Canapé au style loft industriel.",
+    "dimension": "220x90x80 cm",
+    "couleur": "Vert",
+    "matiere": "Tissu",
+    "motscles": [
+      "loft",
+      "industriel",
+      "confort"
+    ]
+  },
+  {
     "name": "Canapé Scandinave",
     "categorie": "canape",
     "price": 650,
     "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728677148/Safford-Sofa-Grey-Front-Featured-_itijq2.jpg",
     "description": "Canapé scandinave avec pieds en bois et coussins détachables.",
     "dimension": "180x85x75 cm",
-    "couleur": "Bleu Clair",
+    "couleur": "Bleu",
     "matiere": "Velours",
     "motscles": [
       "scandinave",
@@ -90,6 +405,306 @@
     ]
   },
   {
+    "name": "Fauteuil Scandinave Confort",
+    "categorie": "fauteuil",
+    "price": 350,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887352/il_570xN.2487717928_eeu5_slmjfa.jpg",
+    "description": "Fauteuil au style scandinave avec pieds en bois.",
+    "dimension": "80x85x90 cm",
+    "couleur": "Noir et Blanc",
+    "matiere": "Tissu",
+    "motscles": [
+      "scandinave",
+      "confort",
+      "bois"
+    ]
+  },
+  {
+    "name": "Fauteuil Club Vintage",
+    "categorie": "fauteuil",
+    "price": 450,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887357/fauteuil-en-tissu-souple-or-fauteuil-happening-or-lago_j3xyne.jpg",
+    "description": "Fauteuil club en cuir vieilli pour un style rétro.",
+    "dimension": "75x85x80 cm",
+    "couleur": "Jaune",
+    "matiere": "Tissu",
+    "motscles": [
+      "club",
+      "vintage",
+      "confort"
+    ]
+  },
+  {
+    "name": "Fauteuil Barcelona cuir",
+    "categorie": "fauteuil",
+    "price": 420,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887353/fauteuil-barcelona-replique-cuir-noir-chaise-knoll-fauteuil-salon-design-50-600x599_etbfnf.jpg",
+    "description": "Fauteuil relax moderne avec repose-pieds intégré.",
+    "dimension": "85x90x100 cm",
+    "couleur": "Noir",
+    "matiere": "Cuir",
+    "motscles": [
+      "relax",
+      "moderne",
+      "repose-pieds"
+    ]
+  },
+  {
+    "name": "Fauteuil Design Contemporain",
+    "categorie": "fauteuil",
+    "price": 390,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887352/csm_MILES_2_TONES_Sessel_b8fe4c3a33_keov9f.jpg",
+    "description": "Fauteuil élégant au design contemporain.",
+    "dimension": "75x80x90 cm",
+    "couleur": "Blanc",
+    "matiere": "Cuir synthétique",
+    "motscles": [
+      "design",
+      "contemporain",
+      "élégant"
+    ]
+  },
+  {
+    "name": "Fauteuil Scandinave Luxe",
+    "categorie": "fauteuil",
+    "price": 500,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887342/Room108_Fauteuil-Elle-scaled_plhzzj.jpg",
+    "description": "Fauteuil Scandinave en cuir avec finition capitonnée.",
+    "dimension": "85x90x95 cm",
+    "couleur": "Blanc",
+    "matiere": "Tissu",
+    "motscles": [
+      "Scandinave",
+      "capitonné",
+      "Tissu"
+    ]
+  },
+  {
+    "name": "Fauteuil Lounge Confort",
+    "categorie": "fauteuil",
+    "price": 370,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887341/H6a18a0ac0d5744cca2359ec299907dd0D_gniyxu.webp",
+    "description": "Fauteuil lounge confortable.",
+    "dimension": "80x85x90 cm",
+    "couleur": "Rouge",
+    "matiere": "Velours",
+    "motscles": [
+      "lounge",
+      "confort",
+      "appui-tête"
+    ]
+  },
+  {
+    "name": "Fauteuil Tissu Boucle Brume",
+    "categorie": "fauteuil",
+    "price": 320,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887348/FauteuilRalph-TissuBoucleBrume_WEB_04_ucp2vz.jpg",
+    "description": "Fauteuil pour une relaxation optimale.",
+    "dimension": "100x100x160 cm",
+    "couleur": "Blanc cassé",
+    "matiere": "Rotin",
+    "motscles": [
+      "brume",
+      "cocoon",
+      "relaxation"
+    ]
+  },
+  {
+    "name": "Fauteuil Papasan Confortable",
+    "categorie": "fauteuil",
+    "price": 330,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887345/fauteuil-boti-en-mindi-massif-et-tissu-ecru-6197_psbjax.jpg",
+    "description": "Fauteuil Papasan au style bohème et cocooning.",
+    "dimension": "90x90x80 cm",
+    "couleur": "Gris clair",
+    "matiere": "Rotin et coton",
+    "motscles": [
+      "papasan",
+      "bohème",
+      "cocooning"
+    ]
+  },
+  {
+    "name": "Fauteuil de lecture",
+    "categorie": "fauteuil",
+    "price": 430,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887336/fauteuil-de-lecture_x6gplx.png",
+    "description": "Fauteuil a bascule moderne pour un style unique.",
+    "dimension": "85x85x90 cm",
+    "couleur": "Blanc",
+    "matiere": "Polyester",
+    "motscles": [
+      "bascule",
+      "moderne",
+      "unique"
+    ]
+  },
+  {
+    "name": "Fauteuil à Oreilles Classique",
+    "categorie": "fauteuil",
+    "price": 400,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887338/FauteuilWinston_WEB_08_ce1qbk.jpg",
+    "description": "Fauteuil à oreilles classique pour un confort optimal.",
+    "dimension": "85x90x100 cm",
+    "couleur": "Blanc",
+    "matiere": "Tissu",
+    "motscles": [
+      "à oreilles",
+      "classique",
+      "confort"
+    ]
+  },
+  {
+    "name": "Fauteuil de salon Élégant",
+    "categorie": "fauteuil",
+    "price": 310,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887332/fauteuil-de-salon-confortable-or-fauteuil-happening-or-lago_imzmug.jpg",
+    "description": "Fauteuil cabriolet chic et élégant.",
+    "dimension": "75x80x85 cm",
+    "couleur": "Jaune",
+    "matiere": "Velours",
+    "motscles": [
+      "cabriolet",
+      "élégant",
+      "chic"
+    ]
+  },
+  {
+    "name": "Fauteuil Minimaliste Scandinave",
+    "categorie": "fauteuil",
+    "price": 360,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887330/fauteuil-easy-beige_yggvgv.jpg",
+    "description": "Fauteuil simple et minimaliste pour un style épuré.",
+    "dimension": "70x75x80 cm",
+    "couleur": "Beige clair",
+    "matiere": "Polyester",
+    "motscles": [
+      "minimaliste",
+      "scandinave",
+      "épuré"
+    ]
+  },
+  {
+    "name": "Fauteuil Poire Confortable",
+    "categorie": "fauteuil",
+    "price": 180,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679548/csm_Miles_Fauteuil_Bormio_night_blue_Color_cognac_cc3d7f16f5_tzm7xg.jpg",
+    "description": "Fauteuil poire idéal pour les moments de détente.",
+    "dimension": "90x90x90 cm",
+    "couleur": "Noir",
+    "matiere": "Polyester",
+    "motscles": [
+      "poire",
+      "détente",
+      "confort"
+    ]
+  },
+  {
+    "name": "Fauteuil Relax Électrique",
+    "categorie": "fauteuil",
+    "price": 550,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679550/010727_mqolzd.jpg",
+    "description": "Fauteuil relax avec inclinaison électrique.",
+    "dimension": "85x90x100 cm",
+    "couleur": "Blanc",
+    "matiere": "Microfibre",
+    "motscles": [
+      "relax",
+      "électrique",
+      "inclinaison"
+    ]
+  },
+  {
+    "name": "Fauteuil d'Extérieur Tressé",
+    "categorie": "fauteuil",
+    "price": 300,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679545/blanc_dore_abc_ambiance_600x600_tmmdru.jpg",
+    "description": "Fauteuil pour l'extérieur en rotin tressé.",
+    "dimension": "80x85x90 cm",
+    "couleur": "Naturel",
+    "matiere": "Rotin",
+    "motscles": [
+      "extérieur",
+      "rotin",
+      "tressé"
+    ]
+  },
+  {
+    "name": "Fauteuil Patchwork Unique",
+    "categorie": "fauteuil",
+    "price": 420,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679542/fauteuil-easy-beige_umdwls.jpg",
+    "description": "Fauteuil pour un intérieur artistique.",
+    "dimension": "75x80x90 cm",
+    "couleur": "Multicolore",
+    "matiere": "Tissu",
+    "motscles": [
+      "patchwork",
+      "coloré",
+      "artistique"
+    ]
+  },
+  {
+    "name": "Fauteuil Ergonomique",
+    "categorie": "fauteuil",
+    "price": 380,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679549/armchair-isolated-on-white-set-vector-3d-illustration_nlqsgj.jpg",
+    "description": "Fauteuil ergonomique pour un confort de longue durée.",
+    "dimension": "80x90x110 cm",
+    "couleur": "Noir",
+    "matiere": "Cuir synthétique",
+    "motscles": [
+      "plusieurs couleurs",
+      "confort",
+      "soutien"
+    ]
+  },
+  {
+    "name": "Fauteuil Bergère Cuir",
+    "categorie": "fauteuil",
+    "price": 410,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729889815/fauteuil-moderne-et-confortable-en-tissu-pieds-en_x0ghrd.jpg",
+    "description": "Fauteuil bergère avec coussins confortables.",
+    "dimension": "85x90x100 cm",
+    "couleur": "Crème",
+    "matiere": "Cuir",
+    "motscles": [
+      "bergère",
+      "classique",
+      "coussins"
+    ]
+  },
+  {
+    "name": "Fauteuil Acapulco Coloré",
+    "categorie": "fauteuil",
+    "price": 250,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729889639/concept-int_C3_A9rieur-de-memphis-design-fauteuil-color_C3_A9-avec-console-et-accessoires-l-image-est-g_C3_A9n_C3_A9r_C3_A9e-utilisation-d-un-ai-271304531_tbya1q.jpg",
+    "description": "Fauteuil Acapulco coloré pour l'intérieur et l'extérieur.",
+    "dimension": "75x75x85 cm",
+    "couleur": "Jaune",
+    "matiere": "Plastique",
+    "motscles": [
+      "acapulco",
+      "coloré",
+      "extérieur"
+    ]
+  },
+  {
+    "name": "Fauteuil Oreilles Moderne",
+    "categorie": "fauteuil",
+    "price": 390,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729889673/armchair-has-ears-in-fabric-legs-natural-wood-rhys-gray_pvf1dg.webp",
+    "description": "Fauteuil à oreilles moderne et confortable.",
+    "dimension": "85x90x100 cm",
+    "couleur": "Blanc",
+    "matiere": "Tissu",
+    "motscles": [
+      "à oreilles",
+      "moderne",
+      "confort"
+    ]
+  },
+  {
     "name": "Table Basse Industrielle",
     "categorie": "table_basse",
     "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679635/table-basse-ronde-en-acacia-massif-naturel-julia_jqtupf.jpg",
@@ -132,6 +747,246 @@
       "relevable",
       "rangement",
       "pratique"
+    ]
+  },
+  {
+    "name": "Table Basse Scandinave",
+    "categorie": "table basse",
+    "price": 250,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887553/table-basse-ovale-bois-cannage-drawer-ellos_bxhhfz.jpg",
+    "description": "Table basse style scandinave avec pieds en bois.",
+    "dimension": "120x60x40 cm",
+    "couleur": "Blanc et bois",
+    "matiere": "Bois et MDF",
+    "motscles": [
+      "scandinave",
+      "bois",
+      "moderne"
+    ]
+  },
+  {
+    "name": "Table Basse bois",
+    "categorie": "table basse",
+    "price": 320,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887555/table-basse-mari-m_adnerg.png",
+    "description": "Table basse au style industriel avec cadre métallique.",
+    "dimension": "100x50x45 cm",
+    "couleur": "Noir et bois",
+    "matiere": "Métal et bois",
+    "motscles": [
+      "bois",
+      "métal",
+      "robuste"
+    ]
+  },
+  {
+    "name": "Table Basse Ronde en Verre",
+    "categorie": "table basse",
+    "price": 280,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887556/table-basse-ronde-chene-plateau-verre-manhattan_uevwo8.jpg",
+    "description": "Table basse ronde avec plateau en verre trempé.",
+    "dimension": "80x80x45 cm",
+    "couleur": "Transparent",
+    "matiere": "Verre et métal",
+    "motscles": [
+      "ronde",
+      "verre",
+      "élégante"
+    ]
+  },
+  {
+    "name": "Table Basse Gigogne Bois",
+    "categorie": "table basse",
+    "price": 300,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679621/91RNXNIf2gS_pczjcp.jpg",
+    "description": "Ensemble de tables basses gigognes en bois massif.",
+    "dimension": "Varie",
+    "couleur": "Chêne",
+    "matiere": "Bois massif",
+    "motscles": [
+      "gigogne",
+      "bois",
+      "polyvalent"
+    ]
+  },
+  {
+    "name": "Table Basse Marbre",
+    "categorie": "table basse",
+    "price": 450,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887540/filters_quality_80_vzqywe.jpg",
+    "description": "Table basse avec plateau en marbre pour un style luxueux.",
+    "dimension": "100x50x40 cm",
+    "couleur": "Blanc et bois",
+    "matiere": "Marbre et bois",
+    "motscles": [
+      "marbre",
+      "luxe",
+      "élégante"
+    ]
+  },
+  {
+    "name": "Table Basse en Rotin",
+    "categorie": "table basse",
+    "price": 220,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887545/AR_SN_CZ_jvadzl.jpg",
+    "description": "Table basse en rotin naturel, parfaite pour un style bohème.",
+    "dimension": "90x50x45 cm",
+    "couleur": "Naturel",
+    "matiere": "Rotin",
+    "motscles": [
+      "rotin",
+      "bohème",
+      "naturel"
+    ]
+  },
+  {
+    "name": "Table Basse Bois Brut",
+    "categorie": "table basse",
+    "price": 380,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887541/02292024_ViewAll_VisFilter_Outdoor_Coffeetables_atqghg.jpg",
+    "description": "Table basse en bois brut pour un style rustique.",
+    "dimension": "110x60x40 cm",
+    "couleur": "Bois naturel",
+    "matiere": "Bois massif",
+    "motscles": [
+      "bois brut",
+      "rustique",
+      "nature"
+    ]
+  },
+  {
+    "name": "Table Basse Rectangulaire Moderne",
+    "categorie": "table basse",
+    "price": 290,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887546/1060-REVEAL-COFFEE-TABLE-8_1200x_bhuma8.jpg",
+    "description": "Table basse rectangulaire avec plateau en verre.",
+    "dimension": "120x60x40 cm",
+    "couleur": "Noir",
+    "matiere": "Verre et métal",
+    "motscles": [
+      "rectangulaire",
+      "moderne",
+      "verre"
+    ]
+  },
+  {
+    "name": "Table Basse Ovale Design",
+    "categorie": "table basse",
+    "price": 310,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887536/2cda79c40afb4a259ba19e9af60215ef_utl4pm.jpg",
+    "description": "Table basse ovale avec un design minimaliste.",
+    "dimension": "90x60x45 cm",
+    "couleur": "Blanc",
+    "matiere": "MDF et métal",
+    "motscles": [
+      "ovale",
+      "design",
+      "minimaliste"
+    ]
+  },
+  {
+    "name": "Table Basse en Métal Doré",
+    "categorie": "table basse",
+    "price": 350,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679625/table-basse-marbre-blanc-et-or-233916_ysnpcj.jpg",
+    "description": "Table basse élégante avec structure en métal doré.",
+    "dimension": "85x85x40 cm",
+    "couleur": "Doré",
+    "matiere": "Métal",
+    "motscles": [
+      "métal doré",
+      "élégant",
+      "luxueux"
+    ]
+  },
+  {
+    "name": "Table Basse avec Rangements",
+    "categorie": "table basse",
+    "price": 330,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679633/cbd3292322ae18feecf4bc513d7afe68_pkocnx.jpg",
+    "description": "Table basse fonctionnelle avec espaces de rangement.",
+    "dimension": "110x60x45 cm",
+    "couleur": "Bois",
+    "matiere": "Bois et MDF",
+    "motscles": [
+      "rangement",
+      "fonctionnelle",
+      "pratique"
+    ]
+  },
+  {
+    "name": "Table Basse en Ciment",
+    "categorie": "table basse",
+    "price": 400,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679616/719o9JvucxL._AC_UF1000_1000_QL80__uoqqm1.jpg",
+    "description": "Table basse en ciment pour un style industriel.",
+    "dimension": "90x45x40 cm",
+    "couleur": "Gris",
+    "matiere": "Ciment",
+    "motscles": [
+      "industriel",
+      "ciment",
+      "moderne"
+    ]
+  },
+  {
+    "name": "Table Basse en  Recyclé",
+    "categorie": "table basse",
+    "price": 180,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1728679628/71hbhH5MqVL._AC_UF350_350_QL80__blj6sr.jpg",
+    "description": "Table basse en bois recyclé pour un style écologique.",
+    "dimension": "100x50x40 cm",
+    "couleur": "Naturel",
+    "matiere": "Bois recyclé",
+    "motscles": [
+      "recyclé",
+      "écologique",
+      "rustique"
+    ]
+  },
+  {
+    "name": "Table Basse avec Plateau",
+    "categorie": "table basse",
+    "price": 270,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887543/ilfliftct100bn-322be9641427f1f5b120dce1e4022f4c_pazrpq.jpg",
+    "description": "Table basse mobile avec plateau pour un usage pratique.",
+    "dimension": "110x60x45 cm",
+    "couleur": "Chêne",
+    "matiere": "Bois et métal",
+    "motscles": [
+      "plateau",
+      "mobile",
+      "pratique"
+    ]
+  },
+  {
+    "name": "Table Basse Transparente",
+    "categorie": "table basse",
+    "price": 380,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887552/table-basse-usm-haller_zvisw1.jpg",
+    "description": "Table basse entièrement en verre pour un look épuré.",
+    "dimension": "100x50x40 cm",
+    "couleur": "Transparent",
+    "matiere": "Verre",
+    "motscles": [
+      "verre",
+      "transparent",
+      "épuré"
+    ]
+  },
+  {
+    "name": "Table Basse Marbre et Bois",
+    "categorie": "table basse",
+    "price": 320,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1729887540/filters_quality_80_vzqywe.jpg",
+    "description": "Table basse en béton et bois pour un style contemporain.",
+    "dimension": "100x50x45 cm",
+    "couleur": "Gris et rouge",
+    "matiere": "Marbre et bois",
+    "motscles": [
+      "verre",
+      "transparent",
+      "épuré"
     ]
   }
 ]

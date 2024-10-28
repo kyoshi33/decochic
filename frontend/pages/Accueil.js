@@ -105,6 +105,7 @@ function Accueil() {
       name={product.name}
       image={product.image}
       dimension={product.dimension}
+      description={product.description}
       price={product.price}
       product={product}
       onProductClick={handleProductClick}

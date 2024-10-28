@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { clearCart } from '../reducers/cart'
@@ -25,7 +25,7 @@ const StripeForms = ({ options, cart, totalPrice }) => {
         const response = await fetch('http://localhost:3000/pay/create-payment-intent', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ totalAmount: totalPrice }),
+          body: JSON.stringify({ totalAmount: totalPrice * 100 }),
         });
         const data = await response.json();
         // Log pour vérifier la réponse reçue du backend
@@ -99,15 +99,16 @@ const StripeForms = ({ options, cart, totalPrice }) => {
     }
   };
 
+
   return (
-    <form onSubmit={handlePayment}>
-      <CardElement options={options} />
-      {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
-      <button type="submit" disabled={!stripe || isProcessing}>
-        {isProcessing ? 'Paiement en cours...' : 'Payer'}
-      </button>
-    </form>
+    <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+      <form onSubmit={handlePayment}>
+        <CardElement options={options} />
+        <button type="submit">Payer</button>
+      </form>
+    </div >
   );
+
 };
 
 export default StripeForms;

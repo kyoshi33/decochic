@@ -69,6 +69,12 @@
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+.titre:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+
+}
+
 .logo {
   padding: 0;
   margin: 20px;
@@ -79,6 +85,12 @@
   width: 20vw;
   margin-top: 90px;
   cursor: pointer;
+
+}
+
+.logo:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -115,12 +127,6 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 10px;
-
-}
-
-.title:hover {
-  transform: translateY(-3px);
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -174,6 +180,12 @@
   color: #333;
 }
 
+.text:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+
+}
+
 .cart {
   position: absolute;
   bottom: -20px;
@@ -190,8 +202,14 @@
   /* Couleur lorsque des articles sont ajoutés au panier */
 }
 
+.cart:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+
+}
+
 .quantity {
-  background-color: #779b4fda;
+  background-color: #B8C2AE;
   color: white;
   border-radius: 50%;
   padding: 4px 8px;
@@ -205,6 +223,12 @@
 
 }
 
+.quantity:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+
+}
+
 .exitIcon {
   position: absolute;
   bottom: -20px;
@@ -213,4 +237,10 @@
   color: black;
   cursor: pointer;
   margin-bottom: 90px;
+}
+
+.exitIcon:hover {
+  transform: translateY(-8px);
+  box-shadow: 6px 3px 12px rgba(87, 16, 16, 0.3);
+
 }

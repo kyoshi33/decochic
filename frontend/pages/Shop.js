@@ -35,22 +35,20 @@ function Shop() {
 
   };
 
-  // Apparence personnalisée du formulaire Stripe
   const appearance = {
-    theme: 'night', // Utilisez un thème contrasté pour tester
+    theme: 'stripe',
     variables: {
-      colorPrimary: '#0570de',
+      colorPrimary: '#0070f3',
       colorBackground: '#ffffff',
       colorText: '#30313d',
       colorDanger: '#df1b41',
-      fontFamily: 'Ideal Sans, system-ui, sans-serif',
-      spacingUnit: '2px',
-      borderRadius: '4px',
+      fontFamily: 'Arial, sans-serif',
+      spacingUnit: '4px',
+      borderRadius: '6px',
     },
   };
-
   const options = {
-    appearance, // Ajout de l'option d'apparence
+    appearance,
   };
 
   return (
@@ -67,14 +65,20 @@ function Shop() {
                 <div key={item._id} className={styles.cartItem}>
                   <img src={item.image} alt={item.name} className={styles.cartItemImage} />
                   <div>
-                    <h3>{item.name}</h3>
-                    <p>{item.price}€</p>
-                    <div>
-                      <button onClick={() => handleQuantityChange(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
-                      <span>{item.quantity}</span>
-                      <button onClick={() => handleQuantityChange(item._id, item.quantity + 1)}>+</button>
+                    <div className={styles.designation}>
+                      <h3 className={styles.name}>{item.name}</h3>
+                      <p>{item.description}</p>
+                      <p className={styles.price}>{item.price}€</p>
+
                     </div>
-                    <button onClick={() => handleRemove(item._id)}>Supprimer</button>
+                    <div className={styles.action}>
+                      <button className={styles.button} onClick={() => handleQuantityChange(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                      <span>{item.quantity}</span>
+                      <button className={styles.button} onClick={() => handleQuantityChange(item._id, item.quantity + 1)}>+</button>
+                    </div>
+                    <div className={styles.delete}>
+                      <button className={styles.button} onClick={() => handleRemove(item._id)}>Supprimer</button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -96,7 +100,7 @@ function Shop() {
               </div>
             </div>
           ) : (
-            <p>Votre panier est vide.</p>
+            <p className={styles.panierVide}>Votre panier est vide...</p>
           )}
         </div>
         <Footer></Footer>

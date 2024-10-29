@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateQuantity, removeCart } from "../reducers/cart";
 import { useState } from "react";
 import StripeForms from "../modules/StripeForms";
-
+import { FaCopy, FaCheck } from "react-icons/fa";
 
 
 
@@ -16,6 +16,20 @@ function Shop() {
   const totalPrice = useSelector((state) => state.cart.totalPrice); // Récupérer le prix total
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+
+
+
+
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText("4242 4242 4242 4242");
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000); // Réinitialise l'icône après 2 secondes
+  };
+
+
+
 
   const handleQuantityChange = (itemId, newQuantity) => {
     if (newQuantity > 0) {
@@ -89,6 +103,15 @@ function Shop() {
                   <div className={styles.modal}>
                     <div className={styles.modalContent}>
                       <h2>Paiement</h2>
+                      <p>Site test, voici votre code de Carte Bancaire</p>
+                      <div className={styles.copyContainer} onClick={handleCopyClick}>
+                        <p className={styles.codeCB}>4242 4242 4242 4242</p>
+                        {isCopied ? (
+                          <FaCheck className={styles.iconCopied} color='green' />
+                        ) : (
+                          <FaCopy className={styles.iconCopy} />
+                        )}
+                      </div>
 
                       <StripeForms options={options} cart={cart} totalPrice={totalPrice} />
 
@@ -104,7 +127,7 @@ function Shop() {
           )}
         </div>
         <Footer></Footer>
-      </div>
+      </div >
     </>
   );
 }

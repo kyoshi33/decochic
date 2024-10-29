@@ -23,7 +23,9 @@ function Header() {
 
   const handleLogout = () => {
     dispatch(logout());
-    router.push({ pathname: '/Accueil' })
+    router.push({ pathname: '/Accueil' }).then(() => {
+      window.location.reload();
+    });
   }
 
   const handleProfil = () => {
@@ -39,13 +41,15 @@ function Header() {
 
   let topMenu =
     <div className={styles.container}>
-      <Link href='/SignUp'>
-        <button className={styles.btnInscription}>Inscription</button>
-      </Link>
+      <div className={styles.connect}>
+        <Link href='/SignUp'>
+          <button className={styles.btnInscription}>Inscription</button>
+        </Link>
 
-      <Link href='/Login'>
-        <button className={styles.btnConnexion}>Connexion</button>
-      </Link>
+        <Link href='/Login'>
+          <button className={styles.btnConnexion}>Connexion</button>
+        </Link>
+      </div>
     </div>
 
   if (user.token) {
@@ -85,7 +89,7 @@ function Header() {
       </div>
       <div className={styles.topTitle}>
         <h1 className={styles.title}>Confo<span>Chic</span></h1>
-        <p className={styles.subtitle}>Canapes • Chaises • Tables Basses</p>
+        <p className={styles.subtitle}>Le confort au bout du clic</p>
       </div>
       {topMenu}
     </header>

@@ -13,6 +13,7 @@ const StripeForms = ({ options, cart, totalPrice }) => {
   const [clientSecret, setClientSecret] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [validPaiement, setValidPaiement] = useState('Votre commande est validée')
   const user = useSelector((state) => state.user.value);
   const router = useRouter();
   const dispatch = useDispatch();
@@ -36,7 +37,6 @@ const StripeForms = ({ options, cart, totalPrice }) => {
       createPaymentIntent();
     }
   }, [totalPrice]);
-  console.log("montant total:", totalPrice)
 
   const handlePayment = async (event) => {
     event.preventDefault();
@@ -65,8 +65,6 @@ const StripeForms = ({ options, cart, totalPrice }) => {
         return;
       }
 
-      console.log("PaymentIntent réussi:", paymentIntent);
-
       // Si le paiement est réussi, envoyer les détails de la commande au backend
       const orderDetails = {
         email: user.email,
@@ -86,6 +84,7 @@ const StripeForms = ({ options, cart, totalPrice }) => {
       console.log("le resultat du result est :", result)
       if (result.result) {
         dispatch(clearCart());
+        setValidPaiement();
         router.push({ pathname: '/Profil' })
       } else {
         setErrorMessage('Erreur lors de la création de la commande');
@@ -101,12 +100,12 @@ const StripeForms = ({ options, cart, totalPrice }) => {
 
 
   return (
-    <div style={{ maxWidth: '400px', margin: '0 auto' }}>
-      <form onSubmit={handlePayment}>
-        <CardElement options={options} />
-        <button type="submit">Payer</button>
-      </form>
-    </div >
+
+    <form onSubmit={handlePayment}>
+      <CardElement options={options} />
+      <button type="submit">Payer</button>
+    </form>
+
   );
 
 };

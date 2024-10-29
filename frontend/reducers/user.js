@@ -25,14 +25,19 @@ export const userSlice = createSlice({
       state.value.firstName = action.payload.firstName;
       state.value.name = action.payload.name;
       state.value.email = action.payload.email;
+      state.value.liked = JSON.parse(localStorage.getItem('likedList')) || [];
     },
+
     logout: (state) => {
+      localStorage.setItem('likedList', JSON.stringify(state.value.liked));
       state.value.isLogged = false;
       state.value.token = null;
       state.value.civilite = null;
       state.value.firstName = null;
       state.value.name = null;
       state.value.email = null;
+      state.value.liked = [];
+
     },
     setLikedList: (state, action) => {
       state.value.liked = action.payload;

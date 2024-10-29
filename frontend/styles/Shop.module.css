@@ -198,3 +198,20 @@
 .modalContent button:hover {
   background-color: #c3c3c3;
 }
+
+.codeCB {
+  cursor: pointer;
+}
+
+.copyContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.iconCopy,
+.iconCopied {
+  margin-left: 8px;
+  font-size: 18px;
+}

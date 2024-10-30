@@ -9,6 +9,8 @@ import user from '../reducers/user'
 import cart from '../reducers/cart';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -38,6 +40,7 @@ function App({ Component, pageProps }) {
             <title>ConfoChic</title>
           </Head>
           <Elements stripe={stripePromise}>
+            <ToastContainer position="top-center" />
             <Component {...pageProps} />
           </Elements>
 

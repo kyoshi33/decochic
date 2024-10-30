@@ -75,7 +75,7 @@ function Accueil() {
     fetchProductsByCategory(categorie);
   }, [categorie]);
 
-  // Fonction pour gérer la recherche
+  // Fonction pour gérer la recherche par mots cl
   const handleSearch = async () => {
     if (search) {
       try {
@@ -180,10 +180,12 @@ function Accueil() {
 
         )}
         <div className={styles.containerProduct}>
-          {listeProduitsAffiches.length > 0 ? (
-            listeProduitsAffiches
-          ) : (
-            <p>Aucun produit trouvé pour cette recherche.</p>
+          {categorie !== 'produit_mystere' && (
+            listeProduitsAffiches.length > 0 ? (
+              listeProduitsAffiches
+            ) : (
+              <p>Aucun produit trouvé pour cette recherche.</p>
+            )
           )}
         </div>
 

@@ -10,6 +10,7 @@ import { FaCopy, FaCheck } from "react-icons/fa";
 
 
 
+
 function Shop() {
   const [update, setUpdate] = useState(false);
   const cart = useSelector((state) => state.cart.items); // Récupérer les produits dans le panier
@@ -46,7 +47,6 @@ function Shop() {
 
   const handleValid = async () => {
     setIsModalOpen(true); // Ouvre la modal 
-
   };
 
   const appearance = {

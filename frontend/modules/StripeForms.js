@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { clearCart } from '../reducers/cart'
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -19,7 +21,7 @@ const StripeForms = ({ options, cart, totalPrice }) => {
   const dispatch = useDispatch();
 
 
-  // Lorsque le composant se monte, demander au backend de créer un PaymentIntent
+  // Demander au backend de créer un PaymentIntent
   useEffect(() => {
     if (totalPrice) {
       async function createPaymentIntent() {
@@ -29,8 +31,7 @@ const StripeForms = ({ options, cart, totalPrice }) => {
           body: JSON.stringify({ totalAmount: totalPrice * 100 }),
         });
         const data = await response.json();
-        // Log pour vérifier la réponse reçue du backend
-        console.log("Réponse du backend pour PaymentIntent:", data);
+
 
         setClientSecret(data.clientSecret);
       }
@@ -81,11 +82,18 @@ const StripeForms = ({ options, cart, totalPrice }) => {
       });
 
       const result = await response.json();
-      console.log("le resultat du result est :", result)
+
       if (result.result) {
         dispatch(clearCart());
-        setValidPaiement();
-        router.push({ pathname: '/Profil' })
+        toast.info("Paiement réussi.", {
+          position: "top-center",
+          autoClose: 3000,
+        }); setTimeout(() => {
+          dispatch(clearCart());
+        }, 3000);
+
+        router.push('/Profil');
+
       } else {
         setErrorMessage('Erreur lors de la création de la commande');
       }
@@ -103,7 +111,10 @@ const StripeForms = ({ options, cart, totalPrice }) => {
 
     <form onSubmit={handlePayment}>
       <CardElement options={options} />
-      <button type="submit">Payer</button>
+      <button type="submit" disabled={isProcessing}>
+        {isProcessing ? "Traitement en cours..." : "Payer"}
+      </button>
+      <ToastContainer position="top-center" />
     </form>
 
   );

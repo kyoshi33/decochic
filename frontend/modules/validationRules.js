@@ -26,9 +26,7 @@ const validationRules = {
   confirmationMotDePasse: {
     required: "Champs obligatoires"
   },
-  //   validate: (value) =>
-  //     value === motDePasse || "Les mots de passe ne sont pas identiques",
-  // },
+
   codePostal: {
     required: "Champs obligatoires",
   },

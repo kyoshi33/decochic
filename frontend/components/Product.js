@@ -4,6 +4,8 @@ import { FaHeart } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { setLikedList } from '../reducers/user';
 import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -30,7 +32,9 @@ function Product(props) {
   // Route pour l'envoi et la sauvegarde des likes
   const like = async () => {
     if (!user.token) {
-      alert("Merci de vous connecter pour liker un produit.");
+      toast.info("Merci de vous connecter pour liker un produit.", {
+        autoClose: 3000,
+      });
       return;
     }
     const id = props._id;
@@ -49,11 +53,14 @@ function Product(props) {
   // Fonction pour gérer l'ajout au panier
   const addToCart = () => {
     if (!user.token) {
-      alert("Merci de vous connecter pour ajouter un produit au panier.");
+      toast.info("Merci de vous connecter pour ajouter un produit au panier.", {
+        autoClose: 3000,
+      });
       return;
     }
     onProductClick(props);  // Appeler la fonction d'ajout au panier, reutiliser dans Accueil
   };
+
 
   return (
     <div className={styles.productCard}>
@@ -86,6 +93,7 @@ function Product(props) {
         )}
 
       </div>
+      <ToastContainer position="top-center" />
     </div>
   )
 }

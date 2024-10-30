@@ -28,6 +28,10 @@ function Header() {
     });
   }
 
+  const handleLogo = () => {
+    window.location.reload();
+  }
+
   const handleProfil = () => {
     router.push({ pathname: '/Profil' })
   }
@@ -80,7 +84,7 @@ function Header() {
     <header className={styles.Container}>
       <div className={styles.histoire}>
         <Link href='/Accueil'>
-          <img src="logo.jpg" alt="Logo du site" className={styles.logo} />
+          <img src="logo.jpg" alt="Logo du site" className={styles.logo} onClick={() => handleLogo()} />
         </Link>
         <Link href='/Histoire'>
           <h2 className={styles.titre}>Notre histoire</h2>

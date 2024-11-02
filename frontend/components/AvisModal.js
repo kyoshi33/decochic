@@ -29,17 +29,26 @@ function AvisModal(props) {
     };
 
     try {
-      // Ici, on simule l'envoi de l'email
-      console.log("Sending form data:", formData);
-      // Une fois que l'email est envoyé, fermer la modal
-      onClose();
-      // Réinitialiser les champs du formulaire après envoi
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setMessage("");
+      const response = await fetch('/contact/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Email envoyé avec succès");
+        onClose();
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        console.error("Échec de l'envoi de l'email");
+      }
     } catch (error) {
-      console.error("Failed to send email:", error);
+      console.error("Erreur lors de l'envoi de l'email:", error);
     }
   };
 

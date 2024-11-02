@@ -1,18 +1,17 @@
 import styles from '../styles/BuyModal.module.css';
-import React from "react";
+import React, { useState } from "react";
 import Modal from 'react-modal';
 import { useRouter } from 'next/router';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../reducers/cart";
 import { FaCheckCircle } from 'react-icons/fa';
-import { useState } from "react";
 import { BsPlusCircle } from 'react-icons/bs';
 
 function BuyModal(props) {
   const router = useRouter();
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
   const [addedItems, setAddedItems] = useState([]);
-
 
   const onClose = () => {
     props.onRequestClose();
@@ -22,29 +21,31 @@ function BuyModal(props) {
     addToCart(product);
     router.push({ pathname: '/Shop' });
   };
+
   const isAdded = (item) => {
-    return addedItems.includes(item); // Vérifier si l'élément est déjà ajouté
+    return addedItems.some(addedItem => addedItem._id === item._id);
   };
 
   const handleAddClick = (item) => {
-    dispatch(addToCart(item)); // Dispatcher l'action addToCart via Redux
-    setAddedItems([...addedItems, item]); // Ajouter l'élément aux items déjà ajoutés
+    const itemExistsInCart = cartItems.some(cartItem => cartItem._id === item._id);
+
+    if (!itemExistsInCart) {
+      dispatch(addToCart(item));
+      setAddedItems([...addedItems, item]);
+    }
   };
 
-  // Vérifie que product existe avant d'accéder à ses propriétés
   const { product } = props;
   if (!product) {
     return null;
   }
 
   const recommendations = [
-    { id: 1, name: 'Housse de Canapé extensible', price: 129, image: 'housse.jpg' },
-    { id: 2, name: 'Proteger votre sol avec nos pattins', price: 5.99, image: 'pattins.jpg' },
-    { id: 3, name: 'Plaid gris/blanc 140*200cm', price: 9.99, image: 'plaid.jpg' },
-    { id: 4, name: 'Entretien de vos produits', price: 9.99, image: 'rouleau.jpg' },
+    { _id: 1, name: 'Housse de Canapé extensible', price: 129, image: 'housse.jpg' },
+    { _id: 2, name: 'Proteger votre sol avec nos pattins', price: 5.99, image: 'pattins.jpg' },
+    { _id: 3, name: 'Plaid gris/blanc 140*200cm', price: 9.99, image: 'plaid.jpg' },
+    { _id: 4, name: 'Entretien de vos produits', price: 9.99, image: 'rouleau.jpg' },
   ];
-
-
 
   return (
     <Modal
@@ -72,14 +73,18 @@ function BuyModal(props) {
               <h4>{item.name}</h4>
               <p>{item.price}€</p>
             </div>
-            <button onClick={() => handleAddClick(item)}
-              className={styles.addToCartButton}
-              disabled={isAdded(item)} // Désactiver le bouton si déjà ajouté
-            >Ajouter{isAdded(item) ? (
-              <FaCheckCircle className={styles.addedIcon} /> // Afficher la croix verte si ajouté
-            ) : (
-              <BsPlusCircle className={styles.addIcon} /> // Afficher l'icône d'ajout
-            )}</button>
+            <button
+              onClick={() => handleAddClick(item)}
+              className={`${styles.addToCartButton} ${isAdded(item) ? styles.added : ''}`}
+              disabled={isAdded(item)}
+            >
+              {isAdded(item) ? (
+                <FaCheckCircle className={styles.addedIcon} />
+              ) : (
+                <BsPlusCircle className={styles.addIcon} />
+              )}
+              {isAdded(item) ? ' Ajouté' : ' Ajouter'}
+            </button>
           </div>
         ))}
         <div className={styles.modalFooter}>
@@ -90,6 +95,5 @@ function BuyModal(props) {
     </Modal>
   );
 }
-
 
 export default BuyModal;

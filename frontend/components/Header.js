@@ -29,8 +29,13 @@ function Header() {
   }
 
   const handleLogo = () => {
-    window.location.reload();
-  }
+    if (router.pathname === '/Accueil') {
+      router.reload();
+    } else {
+      router.push({ pathname: '/Accueil' });
+    }
+  };
+
 
   const handleProfil = () => {
     router.push({ pathname: '/Profil' })

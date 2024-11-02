@@ -11,14 +11,14 @@ const { checkBody } = require('../modules/checkbody')
 /* GET users listing. */
 router.get('/', async (req, res) => {
   try {
-    const users = await User.find(); // Requête pour récupérer les produits
+    const users = await User.find();
     res.json(users);
   } catch (err) {
     res.status(500).send("Erreur lors de la récupération des produits");
   }
 });
 
-// Créer un nouvel utilisateur.
+// Création d'un nouvel utilisateur.
 router.post('/signup', (req, res) => {
   //Vérifier que les champs sont tous fournis
   if (!checkBody(req.body, ['civilite', 'firstName', 'name', 'password', 'email', 'adresse', 'codePostal', 'ville'])) {
@@ -99,10 +99,8 @@ router.get("/likesProducts", async (req, res) => {
   const foundUser = await User.findOne({ email: req.query.email, token: req.query.token }).populate('liked');
   // Si l'utilisateur n'est pas trouvé, retourne une erreur
   if (!foundUser) {
-    console.log('Accès refusé - Utilisateur introuvable');
     return res.json({ result: false, error: 'Access denied' });
   }
-  // Renvoie les produits likés au frontend
   res.json({ result: true, likedProducts: foundUser.liked });
 });
 
@@ -118,7 +116,6 @@ router.post("/commandes", async (req, res) => {
   if (!foundUser) {
     return res.status(403).json({ result: false, error: 'Accès refusé - Utilisateur introuvable' });
   }
-  console.log('Panier au moment de la commande:', cart);
   try {
     // Ajouter une nouvelle commande à l'utilisateur
     const newCommande = {
@@ -130,10 +127,8 @@ router.post("/commandes", async (req, res) => {
     foundUser.commandes.push(newCommande);
     // Sauvegarder l'utilisateur avec la nouvelle commande
     await foundUser.save();
-    console.log('Nouvelle commande avec produits:', JSON.stringify(newCommande, null, 2));
     res.json({ result: true, message: 'Commande ajoutée avec succès', commandesList: foundUser.commandes });
   } catch (error) {
-    console.error('Erreur lors de l\'enregistrement de la commande :', error);
     res.status(500).json({ result: false, error: 'Erreur lors de l\'enregistrement de la commande' });
   }
 });
@@ -145,21 +140,15 @@ router.get("/commandesProducts", async (req, res) => {
     // Récupérer l'utilisateur et utiliser populate sur productId dans commandes
     const foundUser = await User.findOne({ email: req.query.email, token: req.query.token })
       .populate({
-        path: 'commandes.productId', // "Populate" la référence productId avec les détails des produits
+        path: 'commandes.productId',
         model: 'products',
       });
-    // Si l'utilisateur n'est pas trouvé, retourner une erreur
     if (!foundUser) {
-      console.log('Accès refusé - Utilisateur introuvable');
       return res.status(404).json({ result: false, error: 'Utilisateur introuvable' });
     }
-
-    console.log('Produits achetés avec détails:', foundUser.commandes);
-
     // Renvoyer les commandes avec les détails des produits achetés
     res.json({ result: true, commandesProducts: foundUser.commandes });
   } catch (error) {
-    console.error('Erreur lors de la récupération des produits achetés:', error);
     res.status(500).json({ result: false, error: 'Erreur lors de la récupération des produits achetés' });
   }
 });

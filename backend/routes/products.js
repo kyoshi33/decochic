@@ -22,22 +22,21 @@ router.get('/', async (req, res) => {
   }
 });
 
+//Route pour rechercher dans plusieurs categories du produit
 router.get('/search', async (req, res) => {
   const { motscles } = req.query;
-
   try {
-    // Requête MongoDB pour rechercher les produits par mot-clé
+    // Rechercher les produits par mot-clé
     const products = await Product.find({
       $or: [
-        { motscles: { $regex: motscles, $options: 'i' } }, // Recherche dans la description du produit
-        { name: { $regex: motscles, $options: 'i' } }, // Recherche dans le nom du produit
+        { motscles: { $regex: motscles, $options: 'i' } }, // Recherche dans motscles
+        { name: { $regex: motscles, $options: 'i' } }, // Recherche dans le nom 
         { description: { $regex: motscles, $options: 'i' } }, // Recherche dans la description du produit
-        { couleur: { $regex: motscles, $options: 'i' } },
-        { matiere: { $regex: motscles, $options: 'i' } },
+        { couleur: { $regex: motscles, $options: 'i' } },// Recherche par rapport a la couleur
+        { matiere: { $regex: motscles, $options: 'i' } },// Recherche par rapport a la matiere
       ],
     });
-
-    res.json(products); // Retourner les produits au frontend
+    res.json(products);
   } catch (error) {
     res.status(500).json({ message: 'Erreur lors de la recherche des produits', error });
   }
@@ -48,7 +47,6 @@ router.get('/products', async (req, res) => {
     const products = await Product.find();  // Utilisez le modèle pour interagir avec la collection
     res.json(products);
   } catch (error) {
-    console.error('Erreur lors de la récupération des produits:', error);
     res.status(500).json({ error: 'Erreur lors de la récupération des produits' });
   }
 });

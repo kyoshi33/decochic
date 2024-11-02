@@ -7,6 +7,8 @@ import { updateQuantity, removeCart } from "../reducers/cart";
 import { useState } from "react";
 import StripeForms from "../modules/StripeForms";
 import { FaCopy, FaCheck } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -47,6 +49,10 @@ function Shop() {
 
   const handleValid = async () => {
     setIsModalOpen(true); // Ouvre la modal 
+    toast.info("Paiement réussi.", {
+      position: "top-center",
+      autoClose: 3000,
+    })
   };
 
   const appearance = {
@@ -114,7 +120,7 @@ function Shop() {
                       </div>
 
                       <StripeForms options={options} cart={cart} totalPrice={totalPrice} />
-
+                      <ToastContainer position="top-center" />
                       <button onClick={() => setIsModalOpen(false)}>Fermer</button>
 
                     </div>

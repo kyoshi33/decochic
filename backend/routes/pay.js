@@ -4,7 +4,7 @@ const express = require('express');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY); // Utilisation de la clé Stripe
 var router = express.Router();
 
-// Vérifier que la clé est bien chargée
+// test clé Stripe
 console.log("Clé Stripe utilisée :", process.env.STRIPE_SECRET_KEY);
 
 router.post('/create-payment-intent', async (req, res) => {
@@ -18,15 +18,10 @@ router.post('/create-payment-intent', async (req, res) => {
         enabled: true,
       },
     });
-
-    console.log('Réponse envoyée au frontend :', {
-      clientSecret: paymentIntent.client_secret,
-    });
     res.send({
       clientSecret: paymentIntent.client_secret,
     });
   } catch (error) {
-    console.error('Erreur lors de la création du PaymentIntent :', error);
     res.status(500).send({ error: 'Erreur lors de la création du PaymentIntent' });
   }
 });

@@ -15,7 +15,6 @@ const StripeForms = ({ options, cart, totalPrice }) => {
   const [clientSecret, setClientSecret] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [validPaiement, setValidPaiement] = useState('Votre commande est validée')
   const user = useSelector((state) => state.user.value);
   const router = useRouter();
   const dispatch = useDispatch();
@@ -84,7 +83,6 @@ const StripeForms = ({ options, cart, totalPrice }) => {
       const result = await response.json();
 
       if (result.result) {
-        dispatch(clearCart());
         toast.info("Paiement réussi.", {
           position: "top-center",
           autoClose: 3000,

@@ -44,6 +44,7 @@ function Accueil() {
     setIsModalOpen(false);
   };
 
+  // Fonction pour les likes
   const handleHeart = (product) => {
     setSelectedProduct(product);
     setLikedProducts((prevLikedProducts) => {
@@ -74,6 +75,7 @@ function Accueil() {
     };
     fetchProductsByCategory(categorie);
   }, [categorie]);
+
 
   // Fonction pour gérer la recherche par mots cl
   const handleSearch = async () => {

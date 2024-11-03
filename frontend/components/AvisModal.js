@@ -2,7 +2,8 @@ import styles from '../styles/Avis.module.css';
 import React from "react";
 import Modal from 'react-modal';
 import { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 //Composant signalement / enregistrement du texte / informations id
@@ -18,7 +19,7 @@ function AvisModal(props) {
   const onClose = () => {
     props.onRequestClose();
   }
-  //Changer la fonction avec le back
+  //Envoi info pour l'envoi du mail par le back
   const handleSubmit = async () => {
     // Simulation d'envoi
     const formData = {
@@ -29,7 +30,7 @@ function AvisModal(props) {
     };
 
     try {
-      const response = await fetch('/contact/send-email', {
+      const response = await fetch('http://localhost:3000/contact/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,6 +40,10 @@ function AvisModal(props) {
 
       if (response.ok) {
         console.log("Email envoyé avec succès");
+        toast.info("Message envoyé.", {
+          position: "top-center",
+          autoClose: 2000,
+        })
         onClose();
         setFirstName("");
         setLastName("");
@@ -101,6 +106,7 @@ function AvisModal(props) {
         </div>
 
         <div className={styles.modalBtnContainer}>
+
           <button className={styles.btn} onClick={onClose}>Annuler</button>
           <button className={styles.btn} onClick={handleSubmit}>Envoyez</button>
 

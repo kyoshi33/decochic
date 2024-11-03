@@ -1,7 +1,8 @@
 import styles from '../styles/Footer.module.css';
 import { useState } from 'react';
-
 import AvisModal from './AvisModal';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -15,6 +16,10 @@ function Footer() {
 
   const openProjectModal = () => {
     setIsModalOpen(true)
+    toast.info("Message envoyé.", {
+      position: "top-center",
+      autoClose: 3000,
+    })
   }
 
   const closeModal = () => {
@@ -23,7 +28,7 @@ function Footer() {
 
   const handleContactClick = (e) => {
     e.preventDefault(); // empêche le comportement par défaut si nécessaire
-    window.open('mailto:confochic@email.com?subject=Demande de contact&body=Bonjour,', '_self');
+    window.open('mailto:confochic@gmail.com?subject=Demande de contact&body=Bonjour,', '_self');
   };
   const clickInsta = () => {
     window.open('https://www.instagram.com/julien_mlln', '_blank');
@@ -43,6 +48,7 @@ function Footer() {
           <AvisModal isOpen={isModalOpen}
             onRequestClose={closeModal}
           />
+          <ToastContainer position="top-center" autoClose={2000} />
         </div>
         <div className={styles.logo}>
           <h3>Nos reseaux</h3>

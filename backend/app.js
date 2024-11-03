@@ -11,7 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products')
 var payRouter = require('./routes/pay')
-var contactRouter = require('./router/contact')
+var contactRouter = require('./routes/contact')
 
 var app = express();
 

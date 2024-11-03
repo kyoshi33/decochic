@@ -1,27 +1,23 @@
-var express = require('express');
-var router = express.Router();
-const nodemailer = require('nodemailer');
-
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
+require('dotenv').config();
+const express = require('express');
+const nodemailer = require('nodemailer'); // Assurez-vous d'avoir importé nodemailer
+const router = express.Router();
 
 router.post('/send-email', async (req, res) => {
   const { firstName, lastName, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    service: 'mail',
+    service: 'gmail',
     auth: {
-      user: 'votre_email@gmail.com', // Remplacez par votre adresse Gmail
-      pass: 'votre_mot_de_passe' // Remplacez par votre mot de passe d'application
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
     }
   });
 
+
   const mailOptions = {
     from: email,
-    to: 'votre_email@gmail.com', // Remplacez par votre adresse de destination
+    to: 'confochic@gmail.com',
     subject: `Message de ${firstName} ${lastName}`,
     text: message,
   };

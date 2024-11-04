@@ -20,7 +20,7 @@ function Header() {
   const router = useRouter();
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
-
+  //Deconnection
   const handleLogout = () => {
     dispatch(logout());
     router.push({ pathname: '/Accueil' }).then(() => {
@@ -28,6 +28,7 @@ function Header() {
     });
   }
 
+  //photo logo vers acceuil ou refresh
   const handleLogo = () => {
     if (router.pathname === '/Accueil') {
       router.reload();

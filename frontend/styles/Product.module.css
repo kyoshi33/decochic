@@ -3,7 +3,7 @@
   border-radius: 25px;
   text-align: center;
   width: 300px;
-  height: 550px;
+  height: 570px;
   margin: 5px;
   display: flex;
   flex-direction: column;
@@ -70,4 +70,26 @@
 .price {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+.promoSection {
+  text-align: center;
+}
+
+.promoTitle {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 0.9em;
+}
+
+.newPrice {
+  color: green;
+  font-weight: bold;
+  font-size: 1.2em;
 }

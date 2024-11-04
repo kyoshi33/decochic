@@ -38,6 +38,11 @@ function App({ Component, pageProps }) {
         <PersistGate persistor={persistor}>
           <Head>
             <title>ConfoChic</title>
+            <meta name="description" content="ConfoChic - Le meilleur choix pour vos meubles confortables et stylés." />
+            <meta name="keywords" content="meubles, canapés, tables, confort, décoration intérieure" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta charSet="UTF-8" />
+            <link rel="icon" href="/Logo.jpg" />
           </Head>
           <Elements stripe={stripePromise}>
             <ToastContainer position="top-center" />

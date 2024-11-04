@@ -8,14 +8,13 @@ import { useState, useEffect } from "react";
 import BuyModal from '../components/BuyModal';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from "../reducers/cart";
-import { setLikedList } from "../reducers/user";
 import { FaSearchPlus } from 'react-icons/fa';
 
 
 
 function Accueil() {
 
-  const [categorie, setCategorie] = useState('');
+  const [categorie, setCategorie] = useState('canape');
   const [canape, setCanape] = useState([]);
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState('');
@@ -27,7 +26,7 @@ function Accueil() {
   const [isZoomed, setIsZoomed] = useState(false);
 
   const dispatch = useDispatch()
-  const user = useSelector((state) => state.user.value)
+
 
 
   //zoom au clic sur le cv
@@ -59,7 +58,7 @@ function Accueil() {
   }
 
 
-  // Fonction pour récupérer les produits par catégorie
+  // Fonction pour récupérer les produits par catégorie, initialisé d'origine a canape
   useEffect(() => {
     const fetchProductsByCategory = async () => {
       try {
@@ -77,31 +76,60 @@ function Accueil() {
   }, [categorie]);
 
 
-  // Fonction pour gérer la recherche par mots cl
+  //Fonction de recherche par mots clés et de mise à 0 si effacement du mot
   const handleSearch = async () => {
-    if (search) {
-      try {
-        const response = await fetch(`http://localhost:3000/products/search?motscles=${search}`);
-        const data = await response.json();
-
-        if (data.length > 0) {
-          setResults(data);  // Stocke les résultats s'ils existent
-          setNothing(false); // Réinitialise l'état d'erreur
-        } else {
-          setNothing(true);  // Aucun produit trouvé
-          setErrorMessage("Aucun produit ne correspond à votre recherche.");
-        }
-      } catch (error) {
-        console.error("Erreur lors de la récupération des résultats :", error);
-        setNothing(true);  // En cas d'erreur dans la requête
-        setErrorMessage("Erreur lors de la recherche des produits.");
-      }
+    if (search.trim() === '') {
+      setResults([]);      // Efface les résultats de recherche
+      setNothing(false);    // Réinitialise l'état d'erreur
+      fetchProductsByCategory(); // Remet les produits par défaut
+      return;
     }
-  }
 
+    try {
+      const response = await fetch(`http://localhost:3000/products/search?motscles=${search}`);
+      const data = await response.json();
+
+      if (data.length > 0) {
+        setResults(data);   // Stocke les résultats s'ils existent
+        setNothing(false);  // Réinitialise l'état d'erreur
+      } else {
+        setResults([]);
+        setNothing(true);
+        setErrorMessage("Aucun produit ne correspond à votre recherche.");
+      }
+    } catch (error) {
+      console.error("Erreur lors de la récupération des résultats :", error);
+      setNothing(true);
+      setErrorMessage("Erreur lors de la recherche des produits.");
+    }
+  };
+
+  // Charger les produits canape au refresh
+  const fetchProductsByCategory = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/products?categorie=canape`);
+      const data = await response.json();
+      setCanape(data);
+    } catch (error) {
+      console.error('Erreur lors de la récupération des produits :', error);
+    }
+  };
+
+  // Appeler `fetchProductsByCategory` au démarrage
+  useEffect(() => {
+    fetchProductsByCategory();
+  }, []);
+
+  // Surveiller les changements de search
+  useEffect(() => {
+    handleSearch();
+  }, [search]);
+
+
+  //validation avec enter de la barre de recherche
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      handleSearch(); // Appeler la fonction de recherche lors de l'appui sur Entrée
+      handleSearch(); //appel de la fonction
     }
   };
 
@@ -109,7 +137,15 @@ function Accueil() {
   // Liste des produits basés sur la recherche ou la catégorie
   const produitsAffiches = results.length > 0 ? results : canape;
 
-  const listeProduitsAffiches = produitsAffiches.map((product) => (
+  // Trier les produits pour afficher ceux en promotion en premier
+  const produitsTries = produitsAffiches.sort((a, b) => {
+    if (a.isOnSale && !b.isOnSale) return -1;
+    if (!a.isOnSale && b.isOnSale) return 1;
+    return 0;
+  });
+
+  // Mapper les produits triés pour l'affichage
+  const listeProduitsAffiches = produitsTries.map((product) => (
     <Product
       key={product._id}
       _id={product._id}
@@ -119,11 +155,14 @@ function Accueil() {
       dimension={product.dimension}
       description={product.description}
       price={product.price}
+      discountedPrice={product.discountedPrice}
+      isOnSale={product.isOnSale}
       product={product}
       onProductClick={handleProductClick}
       onHeartClick={handleHeart}
     />
   ));
+
 
   return (
     <>

@@ -7,29 +7,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
-
-
 function Product(props) {
-  const { _id, name, image, dimension, price, description, onProductClick, onHeartClick, isProfilePage } = props;
+  const { _id, name, image, dimension, price, discountedPrice, description, onProductClick, onHeartClick, isOnSale, isProfilePage } = props;
   const [liked, setLiked] = useState(false);
 
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.value)
+  const user = useSelector((state) => state.user.value);
 
-
-
-
-  //Mise a jour des like à l'ouverture de la page
   useEffect(() => {
     if (user && user.liked && user.liked.includes(_id)) {
-      setLiked(true); // Si le produit est dans les likes de l'utilisateur
+      setLiked(true);
     }
   }, [user, _id]);
 
-
-  // Route pour l'envoi et la sauvegarde des likes
   const like = async () => {
     if (!user.token) {
       toast.info("Merci de vous connecter pour liker un produit.", {
@@ -42,15 +32,14 @@ function Product(props) {
     const response = await fetch("http://localhost:3000/users/like", {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, id, token }), // Envoie l'ID du produit, email et token
+      body: JSON.stringify({ email, id, token }),
     });
     const result = await response.json();
-    setLiked(!liked); // Alterner l'état du bouton "like"
-    onHeartClick(props); // Appeler la fonction pour enregistrer le like
-    dispatch(setLikedList(result.liked)); // Mise à jour de la liste des produits likés
+    setLiked(!liked);
+    onHeartClick(props);
+    dispatch(setLikedList(result.liked));
   };
 
-  // Fonction pour gérer l'ajout au panier
   const addToCart = () => {
     if (!user.token) {
       toast.info("Merci de vous connecter pour ajouter un produit au panier.", {
@@ -58,9 +47,8 @@ function Product(props) {
       });
       return;
     }
-    onProductClick(props);  // Appeler la fonction d'ajout au panier, reutiliser dans Accueil
+    onProductClick(props);
   };
-
 
   return (
     <div className={styles.productCard}>
@@ -70,17 +58,27 @@ function Product(props) {
       <div className={styles.productInfo}>
         <h3>{name}</h3>
         <p>{dimension}</p>
-        <p key={_id}>
-          {description}
-        </p>
+        <p key={_id}>{description}</p>
       </div>
+
       {!isProfilePage && (
         <div className={styles.evaluation}>
           <span className={styles.etoiles}>★★★★☆</span>
           <span className={styles.compteur}>(54)</span>
         </div>
       )}
-      <p className={styles.price}>{price}€</p>
+
+      {/* Affichage du prix et du texte "Prix en baisse" si en promotion */}
+      {isOnSale ? (
+        <div className={styles.promoSection}>
+          <p className={styles.promoTitle}>Prix en baisse</p>
+          <p className={styles.oldPrice}>{price}€</p>
+          <p className={styles.newPrice}>{discountedPrice}€</p>
+        </div>
+      ) : (
+        <p className={styles.price}>{price}€</p>
+      )}
+
       <div className={styles.productActions}>
         {!isProfilePage && (
           <>
@@ -91,7 +89,6 @@ function Product(props) {
             <TbShoppingCartPlus onClick={() => addToCart()} className={styles.buyButton} />
           </>
         )}
-
       </div>
       <ToastContainer position="top-center" />
     </div>

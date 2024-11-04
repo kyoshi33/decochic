@@ -2,7 +2,7 @@ import styles from '../styles/Avis.module.css';
 import React from "react";
 import Modal from 'react-modal';
 import { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 

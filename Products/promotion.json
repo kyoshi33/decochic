@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Canapé Moderne 3 Places",
+    "categorie": "canape",
+    "price": 750,
+    "discountedPrice": 550,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730669794/chic-modern-sofa-button-tufts-600nw-2464078863_iqupqm.jpg",
+    "description": "Canapé moderne de 3 places avec accoudoirs larges.",
+    "dimension": "200x90x80 cm",
+    "couleur": "Blanc",
+    "matiere": "Tissu",
+    "motscles": [
+      "moderne",
+      "3 places",
+      "confort"
+    ]
+  },
+  {
+    "name": "Canapé Luxe",
+    "categorie": "canape",
+    "price": 1200,
+    "discountedPrice": 900,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730669794/y81_odgfkz.jpg",
+    "description": "Canapé d'angle en cuir avec coussins moelleux.",
+    "dimension": "300x200x90 cm",
+    "couleur": "Bleu",
+    "matiere": "Tissu",
+    "motscles": [
+      "bleu",
+      "luxe",
+      "3 places"
+    ]
+  },
+  {
+    "name": "Canapé Scandinave 3 Places",
+    "categorie": "canape",
+    "price": 850,
+    "discountedPrice": 500,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730669794/-canape-convertible-3-places-fabric-mattress-160-cm-landin-yellow_jjuoo3.webp",
+    "description": "Canapé 3 places style scandinave avec pieds en bois.",
+    "dimension": "210x85x80 cm",
+    "couleur": "Jaune",
+    "matiere": "Tissu",
+    "motscles": [
+      "scandinave",
+      "3 places",
+      "bois"
+    ]
+  },
+  {
+    "name": "Fauteuil Relax en Velours",
+    "categorie": "fauteuil",
+    "price": 300,
+    "discountedPrice": 199,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730669857/648_gwzix6.png",
+    "description": "Fauteuil en velours doux pour un confort optimal.",
+    "dimension": "80x90x100 cm",
+    "couleur": "Bleu",
+    "matiere": "Velours",
+    "motscles": [
+      "relax",
+      "velours",
+      "confort"
+    ]
+  },
+  {
+    "name": "Fauteuil Club en Cuir",
+    "categorie": "fauteuil",
+    "price": 450,
+    "discountedPrice": 299,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730752063/fauteuil-en-cuir-et-ch_C3_AAne-naturel-naos_jzn6dj.jpg",
+    "description": "Fauteuil club en cuir marron, style vintage.",
+    "dimension": "85x85x85 cm",
+    "couleur": "Jaune",
+    "matiere": "Cuir",
+    "motscles": [
+      "club",
+      "cuir",
+      "vintage"
+    ]
+  },
+  {
+    "name": "Fauteuil Scandinave",
+    "categorie": "fauteuil",
+    "price": 380,
+    "discountedPrice": 240,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730669856/howa_kindersessel_grau-_kidsarmchair_fauteuilenfant_poltronabambini_8622_vtzv95.jpg",
+    "description": "Fauteuil style scandinave avec pieds en bois.",
+    "dimension": "75x80x90 cm",
+    "couleur": "Blanc",
+    "matiere": "Tissu",
+    "motscles": [
+      "scandinave",
+      "bois",
+      "confort"
+    ]
+  },
+  {
+    "name": "Table Basse en Verre",
+    "categorie": "table_basse",
+    "price": 200,
+    "discountedPrice": 149,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730669832/81XUaHXxRDL._AC_UF894_1000_QL80__mohgvq.jpg",
+    "description": "Table basse entièrement en verre pour un look épuré.",
+    "dimension": "100x50x40 cm",
+    "couleur": "Transparent",
+    "matiere": "Verre",
+    "motscles": [
+      "verre",
+      "épuré",
+      "moderne"
+    ]
+  },
+  {
+    "name": "Table Basse en Bois Massif",
+    "categorie": "table_basse",
+    "price": 200,
+    "discountedPrice": 149,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730669831/A1Ie3yRt8DL._AC_UF894_1000_QL80__ncqhg4.jpg",
+    "description": "Table basse en bois massif avec finition naturelle.",
+    "dimension": "120x60x45 cm",
+    "couleur": "Bois naturel",
+    "matiere": "Bois",
+    "motscles": [
+      "bois",
+      "massif",
+      "naturel"
+    ]
+  },
+  {
+    "_id": "671c08397f55502959b08e94",
+    "name": "Table Basse Marbre et Bois",
+    "categorie": "table_basse",
+    "price": 320,
+    "discountedPrice": 199,
+    "isOnSale": true,
+    "image": "https://res.cloudinary.com/dtkyr0fbb/image/upload/v1730669832/X_95f9cdb9-1781-4f0c-bdf6-d121e320266d_wkm6sl.jpg",
+    "description": "Table basse en béton et bois pour un style contemporain.",
+    "dimension": "100x50x45 cm",
+    "couleur": "Blanc et bois",
+    "matiere": "Marbre et bois",
+    "motscles": [
+      "marbre",
+      "bois",
+      "contemporain"
+    ]
+  }
+]

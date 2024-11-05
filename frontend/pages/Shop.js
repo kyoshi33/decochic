@@ -15,8 +15,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Shop() {
   const [update, setUpdate] = useState(false);
-  const cart = useSelector((state) => state.cart.items); // Récupérer les produits dans le panier
-  const totalPrice = useSelector((state) => state.cart.totalPrice); // Récupérer le prix total
+  const cart = useSelector((state) => state.cart.items); // Produits dans le panier
+  const totalPrice = useSelector((state) => state.cart.totalPrice); // Prix total
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);

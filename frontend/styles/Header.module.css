@@ -204,7 +204,6 @@
 
 .cart active {
   color: green;
-  /* Couleur lorsque des articles sont ajoutés au panier */
 }
 
 .cart:hover {

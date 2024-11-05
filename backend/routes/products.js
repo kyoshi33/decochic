@@ -7,20 +7,20 @@ const Product = require('../models/products')
 
 // Recuperation des produits en fonction de la liste choisi dans la requete
 router.get('/', async (req, res) => {
-  try {
-    const { categorie } = req.query;
-    let products;
 
-    if (categorie) {
-      products = await Product.find({ categorie: categorie }); // Filtrer par catégorie
-    } else {
-      products = await Product.find(); // Récupérer tous les produits
-    }
-    res.json(products); // Renvoyer les produits filtrés ou tous les produits
-  } catch (err) {
-    res.status(500).send("Erreur lors de la récupération des produits");
+  const { categorie } = req.query;
+  let products;
+
+  if (categorie) {
+    products = await Product.find({ categorie: categorie }); // Filtrer par catégorie
+  } else {
+    products = await Product.find(); // Récupérer tous les produits
   }
-});
+  res.json(products); // Renvoyer les produits filtrés ou tous les produits
+}
+);
+
+
 
 //Route pour rechercher dans plusieurs categories du produit
 router.get('/search', async (req, res) => {

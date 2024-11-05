@@ -1,11 +1,9 @@
-require('dotenv').config(); // Charger les variables d'environnement
+require('dotenv').config();
 
 const express = require('express');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY); // Utilisation de la clé Stripe
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 var router = express.Router();
 
-// test clé Stripe
-console.log("Clé Stripe utilisée :", process.env.STRIPE_SECRET_KEY);
 
 router.post('/create-payment-intent', async (req, res) => {
   const { totalAmount } = req.body;

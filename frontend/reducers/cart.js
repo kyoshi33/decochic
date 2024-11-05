@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: [],  // Liste des articles du panier
-  totalPrice: 0,  // Prix total du panier
+  items: [],
+  totalPrice: 0,
   totalQuantity: 0,
 };
 
@@ -15,20 +15,20 @@ export const cartSlice = createSlice({
     addToCart: (state, action) => {
       const item = action.payload;
       const existingItemIndex = state.items.findIndex((i) => i._id === item._id);
-      console.log("Prix avant ajout :", state.totalPrice);
+
       if (existingItemIndex !== -1) {
-        // Si le produit existe, mettre à jour la quantité
+        // Si le produit existe, mise à jour de la quantité
         state.items = state.items.map((i, index) =>
           index === existingItemIndex ? { ...i, quantity: i.quantity + 1 } : i
         );
       } else {
-        // Ajouter un nouveau produit avec une quantité initiale de 1
+        // Ajout d'un nouveau produit avec une quantité initiale de 1
         state.items = [...state.items, { ...item, quantity: 1 }];
       }
-      // Recalculer la quantité totale
+      // Recalcul la quantité totale
       state.totalQuantity = state.items.reduce((acc, i) => acc + i.quantity, 0);
 
-      // Ajouter le prix du produit au prix total
+      // Ajoute le prix du produit au prix total
       state.totalPrice += item.price;
     },
 
@@ -39,7 +39,7 @@ export const cartSlice = createSlice({
       if (itemToRemove) {
         // Soustraire le prix du produit
         state.totalPrice -= itemToRemove.price * itemToRemove.quantity;
-        // Retirer le produit du panier
+        // Retire le produit du panier
         state.items = state.items.filter((i) => i._id !== itemId);
       }
 

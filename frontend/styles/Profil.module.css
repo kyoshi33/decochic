@@ -9,7 +9,6 @@
 .tabBar {
   display: flex;
   justify-content: center;
-  /* Onglets centrés */
   margin-bottom: 20px;
 }
 
@@ -48,9 +47,7 @@
 .productsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Grille responsive */
   gap: 20px;
-  /* Espacement entre les produits */
 }
 
 .productCard {
@@ -64,6 +61,5 @@
 @media (max-width: 768px) {
   .tabBar {
     flex-direction: column;
-    /* Pour empiler les onglets sur petit écran */
   }
 }

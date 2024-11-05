@@ -36,14 +36,13 @@
 }
 
 .swiperSlide {
-  background-color: transparent;
   width: 350px;
   height: 350px;
 
 }
 
 .swiper {
-  width: 40%;
+  width: 45%;
   padding-top: 40px;
   padding-bottom: 60px;
   margin: auto;
@@ -53,5 +52,5 @@
 
 .image {
   width: 350px;
-  height: 350px;
+  height: 400px;
 }

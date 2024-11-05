@@ -5,7 +5,6 @@ import Product from "../components/Product";
 import Footer from "../components/Footer";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../reducers/user';
 import { useRouter } from 'next/router';
 import { addToCart } from "../reducers/cart";
 import BuyModal from '../components/BuyModal';
@@ -16,7 +15,6 @@ function Profil() {
   const [selectedTab, setSelectedTab] = useState(1);
   const [mesLikes, setMesLikes] = useState([]);
   const [mesAchats, setMesAchats] = useState([]);
-  const [reRender, setReRender] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

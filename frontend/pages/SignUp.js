@@ -39,7 +39,7 @@ function SignUp() {
   };
 
   const validationInscription = async () => {
-    const fetchLogin = await fetch('https://decochicbackend.vercel.app/users/signup', {
+    const fetchLogin = await fetch('https://decochicbackend-juliens-projects-465b0188.vercel.app/users/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, firstName, email, password, adresse, codePostal, ville, civilite }),

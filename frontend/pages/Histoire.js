@@ -46,7 +46,7 @@ function Histoire() {
             coverflowEffect={{
               rotate: 50,
               stretch: 0,
-              depth: 1000, // Augmente la profondeur pour un effet plus marqué
+              depth: 1000,
               modifier: 1,
               slideShadows: false,
             }}

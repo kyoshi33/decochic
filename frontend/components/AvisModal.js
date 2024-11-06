@@ -30,7 +30,7 @@ function AvisModal(props) {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/contact/send-email', {
+      const response = await fetch('https://decochicbackend-juliens-projects-465b0188.vercel.app/contact/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

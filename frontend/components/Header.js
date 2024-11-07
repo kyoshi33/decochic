@@ -90,10 +90,10 @@ function Header() {
     <header className={styles.Container}>
       <div className={styles.histoire}>
         <Link href='/Accueil'>
-          <img src="logo.jpg" alt="Logo du site" className={styles.logo} onClick={() => handleLogo()} />
+          <img src="Logo.jpg" alt="Logo du site" className={styles.logo} onClick={() => handleLogo()} />
         </Link>
         <Link href='/Histoire'>
-          <h2 className={styles.titre}>Notre histoire</h2>
+          <h2 className={styles.titre}>Notre histoire.</h2>
         </Link>
 
       </div>

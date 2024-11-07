@@ -28,7 +28,7 @@ function Histoire() {
 
 
         <p className={styles.texte}>
-          Depuis 1964, ConfoChic est synonyme de qualité et de savoir-faire dans l'univers du mobilier. Fondée il y a plus de 60 ans, l'entreprise a vu le jour dans une petite usine artisanale, où des meubles étaient fabriqués à la main, pièce par pièce, avec une attention minutieuse aux détails.
+          Depuis 1964, ConfoChic est synonyme de qualité et de savoir-faire dans l'univers du mobilier. Fondée il y a plus de 60 ans, l'entreprise a vu le jour dans une petite usine, où des meubles étaient fabriqués à la main, pièce par pièce, avec une attention minutieuse aux détails.
           Ce soin du détail et cette quête de perfection sont devenus les valeurs fondamentales qui continuent de guider ConfoChic aujourd'hui.
           Un Savoir-Faire Hérité
         </p>

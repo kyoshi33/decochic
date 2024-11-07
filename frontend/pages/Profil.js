@@ -43,7 +43,7 @@ function Profil() {
   // Récupération des produits likés
   const clickMesLikes = () => {
     const { email, token } = user;
-    fetch(`https://decochicbackend-juliens-projects-465b0188.vercel.app/users/likesProducts?email=${email}&token=${token}`, {
+    fetch(`http://localhost:3000/users/likesProducts?email=${email}&token=${token}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
@@ -60,7 +60,7 @@ function Profil() {
   // Récupération des achats
   const clickMesAchats = () => {
     const { email, token } = user;
-    fetch(`https://decochicbackend-juliens-projects-465b0188.vercel.app/users/commandesProducts?email=${email}&token=${token}`, {
+    fetch(`http://localhost:3000/users/commandesProducts?email=${email}&token=${token}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })

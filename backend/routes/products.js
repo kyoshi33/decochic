@@ -5,7 +5,7 @@ require('../models/connection');
 const Product = require('../models/products')
 
 
-// Recuperation des produits en fonction de la liste choisi dans la requete
+
 router.get('/', async (req, res) => {
 
   const { categorie } = req.query;
@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
   res.json(products); // Renvoyer les produits filtrés ou tous les produits
 }
 );
+
 
 
 

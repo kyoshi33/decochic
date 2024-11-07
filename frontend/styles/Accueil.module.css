@@ -148,3 +148,28 @@
   max-height: 90%;
   border-radius: 8px;
 }
+
+
+
+.promotionText {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  overflow: hidden;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}

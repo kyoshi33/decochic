@@ -29,7 +29,7 @@ function Product(props) {
     }
     const id = props._id;
     const { email, token } = user;
-    const response = await fetch("https://decochicbackend-juliens-projects-465b0188.vercel.app/users/like", {
+    const response = await fetch("http://localhost:3000/users/like", {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, id, token }),

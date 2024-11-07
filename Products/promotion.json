@@ -1,7 +1,10 @@
 [
   {
     "name": "Canapé Moderne 3 Places",
-    "categorie": "canape",
+    "categorie": [
+      "canape",
+      "promotion"
+    ],
     "price": 750,
     "discountedPrice": 550,
     "isOnSale": true,
@@ -18,7 +21,10 @@
   },
   {
     "name": "Canapé Luxe",
-    "categorie": "canape",
+    "categorie": [
+      "canape",
+      "promotion"
+    ],
     "price": 1200,
     "discountedPrice": 900,
     "isOnSale": true,
@@ -35,7 +41,10 @@
   },
   {
     "name": "Canapé Scandinave 3 Places",
-    "categorie": "canape",
+    "categorie": [
+      "canape",
+      "promotion"
+    ],
     "price": 850,
     "discountedPrice": 500,
     "isOnSale": true,
@@ -52,7 +61,10 @@
   },
   {
     "name": "Fauteuil Relax en Velours",
-    "categorie": "fauteuil",
+    "categorie": [
+      "fauteuil",
+      "promotion"
+    ],
     "price": 300,
     "discountedPrice": 199,
     "isOnSale": true,
@@ -69,7 +81,10 @@
   },
   {
     "name": "Fauteuil Club en Cuir",
-    "categorie": "fauteuil",
+    "categorie": [
+      "fauteuil",
+      "promotion"
+    ],
     "price": 450,
     "discountedPrice": 299,
     "isOnSale": true,
@@ -86,7 +101,10 @@
   },
   {
     "name": "Fauteuil Scandinave",
-    "categorie": "fauteuil",
+    "categorie": [
+      "fauteuil",
+      "promotion"
+    ],
     "price": 380,
     "discountedPrice": 240,
     "isOnSale": true,
@@ -103,7 +121,10 @@
   },
   {
     "name": "Table Basse en Verre",
-    "categorie": "table_basse",
+    "categorie": [
+      "table_basse",
+      "promotion"
+    ],
     "price": 200,
     "discountedPrice": 149,
     "isOnSale": true,
@@ -120,7 +141,10 @@
   },
   {
     "name": "Table Basse en Bois Massif",
-    "categorie": "table_basse",
+    "categorie": [
+      "table_basse",
+      "promotion"
+    ],
     "price": 200,
     "discountedPrice": 149,
     "isOnSale": true,
@@ -138,7 +162,10 @@
   {
     "_id": "671c08397f55502959b08e94",
     "name": "Table Basse Marbre et Bois",
-    "categorie": "table_basse",
+    "categorie": [
+      "table_basse",
+      "promotion"
+    ],
     "price": 320,
     "discountedPrice": 199,
     "isOnSale": true,

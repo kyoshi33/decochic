@@ -5,10 +5,11 @@ require('../models/connection');
 const Product = require('../models/products')
 
 
-
+// recuperation par categorie
 router.get('/', async (req, res) => {
 
   const { categorie } = req.query;
+
   let products;
 
   if (categorie) {
@@ -30,11 +31,12 @@ router.get('/search', async (req, res) => {
     // Rechercher les produits par mot-clé
     const products = await Product.find({
       $or: [
-        { motscles: { $regex: motscles, $options: 'i' } }, // Recherche dans motscles
-        { name: { $regex: motscles, $options: 'i' } }, // Recherche dans le nom 
-        { description: { $regex: motscles, $options: 'i' } }, // Recherche dans la description du produit
-        { couleur: { $regex: motscles, $options: 'i' } },// Recherche par rapport a la couleur
-        { matiere: { $regex: motscles, $options: 'i' } },// Recherche par rapport a la matiere
+        //recherche par :
+        { motscles: { $regex: motscles, $options: 'i' } },
+        { name: { $regex: motscles, $options: 'i' } },
+        { description: { $regex: motscles, $options: 'i' } },
+        { couleur: { $regex: motscles, $options: 'i' } },
+        { matiere: { $regex: motscles, $options: 'i' } },
       ],
     });
     res.json(products);
@@ -51,7 +53,6 @@ router.get('/products', async (req, res) => {
     res.status(500).json({ error: 'Erreur lors de la récupération des produits' });
   }
 });
-
 
 
 module.exports = router;

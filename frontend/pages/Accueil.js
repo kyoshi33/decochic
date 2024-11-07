@@ -57,7 +57,7 @@ function Accueil() {
   }
 
 
-  // Fonction pour récupérer les produits par catégorie, initialisé d'origine a canape
+  // Fonction pour récupérer les produits par catégorie, initialisé d'origine 
   useEffect(() => {
     const fetchProductsByCategory = async () => {
       try {
@@ -192,7 +192,7 @@ function Accueil() {
 
         {categorie === 'promotion' && (
           <div className={styles.promotionText}>
-            <p>Découvrez tous nos produits en promotion!</p>
+            <p>Découvrez d'abord, tous nos produits en promotion!</p>
           </div>
         )}
 

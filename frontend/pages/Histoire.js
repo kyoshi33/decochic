@@ -3,7 +3,6 @@ import styles from "../styles/Histoire.module.css"
 import Head from 'next/head';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';

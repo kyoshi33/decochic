@@ -61,7 +61,7 @@ function Accueil() {
   useEffect(() => {
     const fetchProductsByCategory = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/products?categorie=${categorie}`);
+        const response = await fetch(`https://decochicbackend.vercel.app/products?categorie=${categorie}`);
         if (!response.ok) {
           throw new Error('Erreur lors de la récupération des produits');
         }
@@ -85,7 +85,7 @@ function Accueil() {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/products/search?motscles=${search}`);
+      const response = await fetch(`https://decochicbackend.vercel.app/products/search?motscles=${search}`);
       const data = await response.json();
 
       if (data.length > 0) {
@@ -106,7 +106,7 @@ function Accueil() {
   // Charger les produits canape au refresh
   const fetchProductsByCategory = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/products?categorie=promotion`);
+      const response = await fetch(`https://decochicbackend.vercel.app/products?categorie=promotion`);
       const data = await response.json();
       setCanape(data);
     } catch (error) {
@@ -114,12 +114,12 @@ function Accueil() {
     }
   };
 
-  // Appeler `fetchProductsByCategory` au démarrage
+  // Lance `fetchProductsByCategory` au démarrage
   useEffect(() => {
     fetchProductsByCategory();
   }, []);
 
-  // Surveiller les changements de search
+  // Surveille les changements de search
   useEffect(() => {
     handleSearch();
   }, [search]);

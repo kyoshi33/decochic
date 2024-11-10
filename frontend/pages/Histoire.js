@@ -54,25 +54,25 @@ function Histoire() {
             className={styles.swiper}
           >
             <SwiperSlide className={styles.swiperSlide}>
-              <img src="/montageCanape.jpg" alt="Logo du site" className={styles.image} />
+              <img src="/montageCanape.jpg" alt="Montage d'un canape" className={styles.image} />
             </SwiperSlide>
             <SwiperSlide className={styles.swiperSlide}>
-              <img src="/test.jpg" alt="Image du magasin" className={styles.image} />
+              <img src="/test.jpg" alt="Image d'un test qualité'" className={styles.image} />
             </SwiperSlide>
             <SwiperSlide className={styles.swiperSlide}>
-              <img src="/fabrication1.jpg" alt="Image du magasin" className={styles.image} />
+              <img src="/fabrication1.jpg" alt="Image de la fabrication des canapes" className={styles.image} />
             </SwiperSlide>
             <SwiperSlide className={styles.swiperSlide}>
-              <img src="/culture.jpg" alt="Image du magasin" className={styles.image} />
+              <img src="/culture.jpg" alt="Portrait" className={styles.image} />
             </SwiperSlide>
             <SwiperSlide className={styles.swiperSlide}>
               <img src="/magasin.jpg" alt="Image du magasin" className={styles.image} />
             </SwiperSlide>
             <SwiperSlide className={styles.swiperSlide}>
-              <img src="/expo.jpg" alt="Logo du site" className={styles.image} />
+              <img src="/expo.jpg" alt="image de notre expo" className={styles.image} />
             </SwiperSlide>
             <SwiperSlide className={styles.swiperSlide}>
-              <img src="/showroom.jpg" alt="Logo du site" className={styles.image} />
+              <img src="/showroom.jpg" alt="image du showroom" className={styles.image} />
             </SwiperSlide>
 
           </Swiper>

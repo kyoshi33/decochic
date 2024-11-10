@@ -152,9 +152,9 @@ function SignUp() {
             {errors.ville && <p className="error">{errors.ville.message}</p>}
           </div>
           <div className={styles.btn}>
-            <button className={styles.btnValidation} type="submit" onClick={() => validationInscription()}>Valider mon Inscription</button>
+            <button className={styles.btnValidation} aria-label="validation inscription" type="submit" onClick={() => validationInscription()}>Valider mon Inscription</button>
             <Link href='/Accueil'>
-              <button className={styles.btnRetour}>Retour</button>
+              <button aria-label="Retour" className={styles.btnRetour}>Retour</button>
             </Link>
           </div>
         </form >

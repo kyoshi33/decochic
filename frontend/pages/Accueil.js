@@ -184,10 +184,10 @@ function Accueil() {
               {errorMessage}
             </h4>
           )}
-          <button className={styles.btnInscription} onClick={() => setCategorie('canape')}>Canape</button>
-          <button className={styles.btnConnexion} onClick={() => setCategorie('fauteuil')}>Fauteuil</button>
-          <button className={styles.btnInscription} onClick={() => setCategorie('table_basse')}>Table basse</button>
-          <button className={styles.btnConnexion} onClick={() => setCategorie('produit_mystere')}>Produit mystere</button>
+          <button className={styles.btnInscription} aria-label="recherche de tous les canapes" onClick={() => setCategorie('canape')}>Canape</button>
+          <button className={styles.btnConnexion} aria-label="recherche de tous les fauteuils" onClick={() => setCategorie('fauteuil')}>Fauteuil</button>
+          <button className={styles.btnInscription} aria-label="recherche de toutes les tables basses" onClick={() => setCategorie('table_basse')}>Table basse</button>
+          <button className={styles.btnConnexion} aria-label="affichage d'un produit mystere" onClick={() => setCategorie('produit_mystere')}>Produit mystere</button>
         </div>
 
         {categorie === 'promotion' && (
@@ -210,7 +210,7 @@ function Accueil() {
                 alt="CV"
                 onClick={toggleZoom} // Ouverture modal zoom au clic
               />
-              <FaSearchPlus className={styles.zoomIcon} onClick={toggleZoom} />
+              <FaSearchPlus className={styles.zoomIcon} onClick={toggleZoom} aria-label="zoom au clic" />
             </div>
 
             {isZoomed && (

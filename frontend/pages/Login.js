@@ -38,7 +38,6 @@ function Login() {
     if (res.result) {
       dispatch(login({ token: res.token, name: res.name, firstName: res.firstName, email: res.email, liked: res.liked, }));
       router.push({ pathname: '/Accueil' })
-      console.log('validation ok')
     } else {
       setErrorLogin(true)
     }
@@ -70,7 +69,7 @@ function Login() {
             {errors.motDePasse && <p className={styles.error}>{errors.motDePasse.message}</p>}
           </div>
           <div className={styles.btn}>
-            <button className={styles.btnValidation} type="submit" onClick={() => ConnexionProfil()}>Connexion</button>
+            <button className={styles.btnValidation} type="submit" aria-label="validation de la connexion" onClick={() => ConnexionProfil()}>Connexion</button>
             <Link href='/Accueil'>
               <button className={styles.btnRetour}>Retour</button>
             </Link>

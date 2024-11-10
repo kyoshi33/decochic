@@ -92,12 +92,12 @@ function Shop() {
 
                     </div>
                     <div className={styles.action}>
-                      <button className={styles.button} onClick={() => handleQuantityChange(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                      <button className={styles.button} aria-label="enleve un" onClick={() => handleQuantityChange(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
                       <span>{item.quantity}</span>
-                      <button className={styles.button} onClick={() => handleQuantityChange(item._id, item.quantity + 1)}>+</button>
+                      <button className={styles.button} aria-label="ajout un" onClick={() => handleQuantityChange(item._id, item.quantity + 1)}>+</button>
                     </div>
                     <div className={styles.delete}>
-                      <button className={styles.button} onClick={() => handleRemove(item._id)}>Supprimer</button>
+                      <button className={styles.button} aria-label="suppresion" onClick={() => handleRemove(item._id)}>Supprimer</button>
                     </div>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ function Shop() {
 
                       <StripeForms options={options} cart={cart} totalPrice={totalPrice} />
                       <ToastContainer position="top-center" />
-                      <button onClick={() => setIsModalOpen(false)}>Fermer</button>
+                      <button aria-label="ferme" onClick={() => setIsModalOpen(false)}>Fermer</button>
 
                     </div>
                   </div>
